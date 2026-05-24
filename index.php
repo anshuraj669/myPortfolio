@@ -202,6 +202,9 @@ $flash = $_GET['sent'] ?? null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= htmlspecialchars($profile['name']) ?> — <?= htmlspecialchars($profile['company_role']) ?></title>
     <meta name="description" content="<?= htmlspecialchars($profile['tagline']) ?>" />
+    <link rel="icon" type="image/png" href="assets/images/Logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/Logo.png" />
+    <link rel="shortcut icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bungee+Shade&family=Fredoka:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
