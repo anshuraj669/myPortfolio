@@ -42,6 +42,11 @@ body {
     overflow-x: hidden;
     cursor: none;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: "kern" 1, "liga" 1;
+    font-kerning: normal;
 }
 
 @media (max-width: 900px) { body { cursor: auto; } }
