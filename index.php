@@ -14,6 +14,8 @@ $profile = [
     'resume'      => 'Resume.pdf',
     'company'     => 'GetDirect',
     'company_role'=> 'Backend Developer',
+    // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
+    'web3forms_key' => 'YOUR_WEB3FORMS_ACCESS_KEY',
 ];
 
 $stats = [
@@ -563,7 +565,12 @@ $flash = $_GET['sent'] ?? null;
                     </div>
                 </a>
             </div>
-            <form action="contact.php" method="POST" class="contact-form chat-form reveal" id="contactForm">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form chat-form reveal" id="contactForm">
+                <!-- Web3Forms: get a free access key at https://web3forms.com (enter your email, key is emailed to you) and paste it below -->
+                <input type="hidden" name="access_key" value="<?= htmlspecialchars($profile['web3forms_key']) ?>" />
+                <input type="hidden" name="from_name" value="<?= htmlspecialchars($profile['name']) ?> Portfolio" />
+                <!-- Honeypot spam filter (leave empty) -->
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
                 <div class="chat-form-head">
                     <div class="chat-avatar small has-photo">
                         <img src="assets/images/profile.jpg" alt="<?= htmlspecialchars($profile['name']) ?>" class="avatar-img"

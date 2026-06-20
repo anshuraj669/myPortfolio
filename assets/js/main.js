@@ -192,13 +192,43 @@
     /* ---------------- Form submit handler (UX feedback) ---------------- */
     const form = document.getElementById('contactForm');
     if (form) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
             const btn = form.querySelector('button[type="submit"]');
+            const btnSpan = btn ? btn.querySelector('span') : null;
+            const originalText = btnSpan ? btnSpan.textContent : '';
             if (btn) {
-                btn.querySelector('span').textContent = 'Sending...';
+                if (btnSpan) btnSpan.textContent = 'Sending...';
                 btn.disabled = true;
                 btn.style.opacity = '.7';
             }
+            try {
+                const res = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { Accept: 'application/json' },
+                });
+                const data = await res.json().catch(() => ({}));
+                if (res.ok && data.success) {
+                    if (btnSpan) btnSpan.textContent = '✓ Sent! I\'ll reply soon';
+                    form.reset();
+                } else {
+                    if (btnSpan) btnSpan.textContent = data.message || 'Something went wrong — try again';
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                }
+            } catch (err) {
+                if (btnSpan) btnSpan.textContent = 'Network error — try again';
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                return;
+            }
+            setTimeout(() => {
+                if (btnSpan) btnSpan.textContent = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+            }, 4000);
         });
     }
 
