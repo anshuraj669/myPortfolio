@@ -1,0 +1,9 @@
+.git
+.gitignore
+.claude
+messages.log
+Dockerfile
+.dockerignore
+render.yaml
+build.sh
+anshu1306.json

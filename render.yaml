@@ -1,0 +1,13 @@
+# Optional: deploy via Render Blueprint instead of the manual form.
+# Render dashboard -> New -> Blueprint -> pick this repo.
+services:
+  - type: web
+    name: myPortfolio
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    branch: main
+    region: oregon
+    plan: free
+    envVars:
+      - key: PORT
+        value: 10000
