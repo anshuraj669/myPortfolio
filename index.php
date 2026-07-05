@@ -84,12 +84,12 @@ $experience = [
 
 $projects = [
     [
-        'title' => 'BetCelebrate',
-        'sub'   => 'Online Transaction Platform',
-        'desc'  => 'Normalized PostgreSQL schema, 10+ FastAPI endpoints, Firebase auth, 99.9% uptime during testing.',
-        'tags'  => ['FastAPI', 'PostgreSQL', 'Firebase', 'Next.js'],
-        'link'  => '#',
-        'icon'  => '🎰',
+        'title' => 'Sentinel',
+        'sub'   => 'One-Click Website Security Audit',
+        'desc'  => 'Black-box security auditor that scans any live site over HTTP/TLS for encryption, header, DNS/email and exposed-file issues, plus a --code CLI that statically analyses a codebase, its dependencies and git history. Every finding maps to OWASP, PCI-DSS and CIS.',
+        'tags'  => ['Python', 'Laravel', 'REST API', 'Security'],
+        'link'  => 'https://github.com/anshuraj669/sentinel',
+        'icon'  => '🛡️',
     ],
     [
         'title' => 'Visual Alertness Monitoring',
