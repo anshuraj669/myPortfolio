@@ -32,6 +32,9 @@ $skills = [
         ['name' => 'REST API',   'level' => 88, 'icon' => '⚡'],
         ['name' => 'Flask',      'level' => 80, 'icon' => '🧪'],
         ['name' => 'PHP',        'level' => 85, 'icon' => '🐘'],
+        ['name' => 'MySQL',      'level' => 85, 'icon' => '🌊'],
+        ['name' => 'JavaScript', 'level' => 84, 'icon' => '🟨'],
+        ['name' => 'HTML/CSS',   'level' => 88, 'icon' => '🎨'],
     ],
     'Tools & Systems' => [
         ['name' => 'Linux',     'level' => 85, 'icon' => '🐧'],
