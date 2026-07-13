@@ -40,6 +40,8 @@ $skills = [
         ['name' => 'Firebase',  'level' => 80, 'icon' => '🔥'],
         ['name' => 'VS Code',   'level' => 95, 'icon' => '💻'],
         ['name' => 'Networking','level' => 78, 'icon' => '🌐'],
+        ['name' => 'Docker',    'level' => 83, 'icon' => '🐳'],
+        ['name' => 'Kubernetes','level' => 75, 'icon' => '☸️'],
     ],
 ];
 
