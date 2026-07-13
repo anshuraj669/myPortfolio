@@ -29,21 +29,9 @@ $skills = [
     'Backend & APIs' => [
             ['name' => 'Laravel',    'level' => 82, 'icon' => '🎯'],
         ['name' => 'Python',     'level' => 92, 'icon' => '🐍'],
-        ['name' => 'FastAPI',    'level' => 88, 'icon' => '⚡'],
+        ['name' => 'REST API',   'level' => 88, 'icon' => '⚡'],
         ['name' => 'Flask',      'level' => 80, 'icon' => '🧪'],
         ['name' => 'PHP',        'level' => 85, 'icon' => '🐘'],
-    ],
-    'Mobile & Frontend' => [
-        ['name' => 'Flutter',    'level' => 78, 'icon' => '💙'],
-        ['name' => 'React',      'level' => 78, 'icon' => '⚛️'],
-        ['name' => 'JavaScript', 'level' => 84, 'icon' => '🟨'],
-        ['name' => 'HTML/CSS',   'level' => 88, 'icon' => '🎨'],
-    ],
-    'Database & Data' => [
-        ['name' => 'SQL (Advanced)', 'level' => 94, 'icon' => '🗄️'],
-        ['name' => 'MySQL',          'level' => 85, 'icon' => '🌊'],
-        ['name' => 'NumPy / Pandas', 'level' => 86, 'icon' => '📊'],
-        ['name' => 'Matplotlib',     'level' => 80, 'icon' => '📈'],
     ],
     'Tools & Systems' => [
         ['name' => 'Linux',     'level' => 85, 'icon' => '🐧'],
