@@ -1,0 +1,12 @@
+# Contact form submissions written by contact.php at runtime.
+# Never commit — GitHub Pages would serve it publicly.
+messages.log
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
