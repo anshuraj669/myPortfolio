@@ -335,7 +335,7 @@
             let target = '#contact';
             if (/project|work|repo|github|build|ship/.test(q))    target = '#projects';
             else if (/skill|stack|tech|tool|know/.test(q))         target = '#skills';
-            else if (/exper|job|work|company|getdirect|wipro/.test(q)) target = '#experience';
+            else if (/exper|job|work|company|incoweb|wipro/.test(q)) target = '#experience';
             else if (/edu|college|degree|school/.test(q))          target = '#education';
             else if (/cert|achiev|award|win/.test(q))              target = '#extras';
             else if (/about|who|bio/.test(q))                       target = '#about';

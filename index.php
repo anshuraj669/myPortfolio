@@ -12,7 +12,7 @@ $profile = [
     'github'      => 'https://github.com/anshuraj669',
     'linkedin'    => 'https://www.linkedin.com/in/anshuraj1306/',
     'resume'      => 'Resume.pdf',
-    'company'     => 'GetDirect',
+    'company'     => 'Incoweb',
     'company_role'=> 'Backend Developer',
     // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
     'web3forms_key' => 'YOUR_WEB3FORMS_ACCESS_KEY',
@@ -50,12 +50,12 @@ $skills = [
 
 $experience = [
     [
-        'company' => 'GetDirect',
+        'company' => 'Incoweb',
         'role'    => 'Backend Developer',
         'period'  => '2025 — Present',
         'status'  => 'current',
         'points'  => [
-            'Designing and shipping production REST APIs powering the GetDirect platform.',
+            'Designing and shipping production REST APIs powering the Incoweb platform.',
             'Architecting normalized database schemas and writing performant SQL for high-traffic flows.',
             'Owning service reliability — observability, error handling, and graceful degradation.',
             'Collaborating with frontend & product to translate requirements into clean technical specs.',
