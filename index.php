@@ -4,73 +4,83 @@ $profile = [
     'name'        => 'Anshu Raj',
     'first'       => 'Anshu',
     'last'        => 'Raj',
-    'tagline'     => 'Backend Developer crafting clean APIs, solid databases, and resilient systems.',
-    'roles'       => ['Backend Developer', 'API Architect', 'Database Designer', 'Problem Solver'],
+    'tagline'     => 'Software Engineer building backend systems, REST APIs, and data-driven applications with Laravel, Python and MySQL.',
+    'roles'       => ['Backend Developer', 'Software Engineer', 'API Developer', 'Problem Solver'],
     'location'    => 'Patna, Bihar, India',
-    'email'       => 'raazanshu123@gmail.com',
+    'email'       => 'anshuraj.is.dev@gmail.com',
     'phone'       => '+91 8292253230',
     'github'      => 'https://github.com/anshuraj669',
-    'linkedin'    => 'https://www.linkedin.com/in/anshuraj1306/',
+    'linkedin'    => 'https://www.linkedin.com/in/anshu~raj/',
     'resume'      => 'Resume.pdf',
-    'company'     => 'Incoweb',
+    'company'     => 'Incoweb Technologies',
     'company_role'=> 'Backend Developer',
     // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
     'web3forms_key' => 'YOUR_WEB3FORMS_ACCESS_KEY',
 ];
 
 $stats = [
-    ['num' => 20,   'label' => 'Repositories Shipped',   'suffix' => '+'],
-    ['num' => 1000, 'label' => 'Datasets Processed',     'suffix' => '+'],
-    ['num' => 10,   'label' => 'REST APIs Built',        'suffix' => '+'],
-    ['num' => 99,   'label' => 'System Uptime',          'suffix' => '%'],
+    ['num' => 1000, 'label' => 'Datasets Processed',      'suffix' => '+'],
+    ['num' => 250,  'label' => 'Anomalies Reported',      'suffix' => '+'],
+    ['num' => 10,   'label' => 'REST APIs Built',         'suffix' => '+'],
+    ['num' => 20,   'label' => 'Repositories Shipped',    'suffix' => '+'],
 ];
 
 $skills = [
-    'Backend & APIs' => [
-            ['name' => 'Laravel',    'level' => 82, 'icon' => '🎯'],
+    'Languages' => [
         ['name' => 'Python',     'level' => 92, 'icon' => '🐍'],
-        ['name' => 'REST API',   'level' => 88, 'icon' => '⚡'],
-        ['name' => 'Flask',      'level' => 80, 'icon' => '🧪'],
-        ['name' => 'PHP',        'level' => 85, 'icon' => '🐘'],
-        ['name' => 'MySQL',      'level' => 85, 'icon' => '🌊'],
+        ['name' => 'PHP',        'level' => 88, 'icon' => '🐘'],
+        ['name' => 'SQL',        'level' => 90, 'icon' => '🗄️'],
         ['name' => 'JavaScript', 'level' => 84, 'icon' => '🟨'],
         ['name' => 'HTML/CSS',   'level' => 88, 'icon' => '🎨'],
     ],
-    'Tools & Systems' => [
-        ['name' => 'Linux',     'level' => 85, 'icon' => '🐧'],
-        ['name' => 'Git/GitHub','level' => 90, 'icon' => '🌿'],
-        ['name' => 'Postman',   'level' => 92, 'icon' => '📮'],
-        ['name' => 'Firebase',  'level' => 80, 'icon' => '🔥'],
-        ['name' => 'VS Code',   'level' => 95, 'icon' => '💻'],
-        ['name' => 'Networking','level' => 78, 'icon' => '🌐'],
-        ['name' => 'Docker',    'level' => 83, 'icon' => '🐳'],
-        ['name' => 'Kubernetes','level' => 75, 'icon' => '☸️'],
+    'Backend & APIs' => [
+        ['name' => 'Laravel',          'level' => 88, 'icon' => '🎯'],
+        ['name' => 'FastAPI',          'level' => 86, 'icon' => '⚡'],
+        ['name' => 'REST APIs',        'level' => 90, 'icon' => '🔗'],
+        ['name' => 'Auth & RBAC',      'level' => 85, 'icon' => '🔐'],
+        ['name' => 'API Integration',  'level' => 87, 'icon' => '🔌'],
+    ],
+    'Databases' => [
+        ['name' => 'MySQL',              'level' => 90, 'icon' => '🌊'],
+        ['name' => 'PostgreSQL',         'level' => 82, 'icon' => '🐬'],
+        ['name' => 'Database Design',    'level' => 88, 'icon' => '📐'],
+        ['name' => 'Query Optimisation', 'level' => 85, 'icon' => '🚀'],
+        ['name' => 'Redis / Caching',    'level' => 80, 'icon' => '🧊'],
+    ],
+    'DevOps & Tools' => [
+        ['name' => 'Docker',     'level' => 83, 'icon' => '🐳'],
+        ['name' => 'Linux',      'level' => 88, 'icon' => '🐧'],
+        ['name' => 'Nginx',      'level' => 80, 'icon' => '🌐'],
+        ['name' => 'Kubernetes', 'level' => 70, 'icon' => '☸️'],
+        ['name' => 'Git/GitHub', 'level' => 90, 'icon' => '🌿'],
+        ['name' => 'Postman',    'level' => 92, 'icon' => '📮'],
     ],
 ];
 
 $experience = [
     [
-        'company' => 'Incoweb',
+        'company' => 'Incoweb Technologies',
         'role'    => 'Backend Developer',
-        'period'  => '2025 — Present',
+        'period'  => 'Mar 2026 — Present',
         'status'  => 'current',
         'points'  => [
-            'Designing and shipping production REST APIs powering the Incoweb platform.',
-            'Architecting normalized database schemas and writing performant SQL for high-traffic flows.',
-            'Owning service reliability — observability, error handling, and graceful degradation.',
-            'Collaborating with frontend & product to translate requirements into clean technical specs.',
+            'Developing backend services and RESTful APIs using Laravel, PHP, MySQL and Redis for business automation and customer-facing applications.',
+            'Integrating WhatsApp Business APIs and third-party services to automate customer communication, lead management, notifications and business workflows.',
+            'Designing database schemas and optimising MySQL queries and Eloquent relationships to improve application performance and data reliability.',
+            'Implementing authentication, authorization, validation, role-based access control and reusable Laravel services for secure, maintainable applications.',
+            'Translating business requirements into technical solutions — troubleshooting API, database and integration issues from development through deployment.',
         ],
     ],
     [
         'company' => 'Wipro Limited',
         'role'    => 'Associate',
-        'period'  => 'Dec 2024 — 2025',
+        'period'  => 'Dec 2024 — Mar 2026',
         'status'  => 'past',
         'points'  => [
-            'Audited mapping data systems and reported 250+ anomalies and data discrepancies.',
-            'Drove a 15% improvement in map data accuracy by validating engineering fixes.',
-            'Processed and validated 1,000+ datasets for a self-driving (HLP) AI pipeline.',
-            'Used Deepen.AI and internal tooling to boost object-recognition metrics by 10%.',
+            'Analysed mapping and data-processing systems, identifying and reporting 250+ system anomalies and data discrepancies.',
+            'Collaborated with engineering teams to investigate issues and validate fixes, contributing to a 15% improvement in map data accuracy and reliability.',
+            'Processed and validated 1,000+ complex datasets for a self-driving vehicle project, ensuring data quality before AI model ingestion.',
+            'Used Deepen.AI and internal tools to analyse object-recognition outputs, contributing to a 10% improvement in AI model performance metrics.',
         ],
     ],
 ];
@@ -78,35 +88,35 @@ $experience = [
 $projects = [
     [
         'title' => 'Sentinel',
-        'sub'   => 'One-Click Website Security Audit',
-        'desc'  => 'Black-box security auditor that scans any live site over HTTP/TLS for encryption, header, DNS/email and exposed-file issues, plus a --code CLI that statically analyses a codebase, its dependencies and git history. Every finding maps to OWASP, PCI-DSS and CIS.',
-        'tags'  => ['Python', 'Laravel', 'REST API', 'Security'],
+        'sub'   => 'Website Security Audit Platform',
+        'desc'  => 'Full-stack security auditing platform built with Laravel, Livewire, MySQL, FastAPI and Python. Role-based dashboards and scan history on the Laravel side talk to a stateless Python scanning engine over REST — covering HTTPS/TLS, security headers, DNS, exposed files, cookie security, malware, CORS and information leakage. Ships with a cross-platform CLI for offline source-code, dependency, secret and Git-history audits with report sync.',
+        'tags'  => ['Laravel', 'Livewire', 'FastAPI', 'Python', 'MySQL', 'Security'],
         'link'  => 'https://github.com/anshuraj669/sentinel',
         'icon'  => '🛡️',
     ],
     [
+        'title' => 'Laravel CRM System',
+        'sub'   => 'Customer Relationship Management',
+        'desc'  => 'CRM built with Laravel, Livewire, MySQL and Blade — customer management, lead tracking and role-based access control, backed by RESTful APIs on a Laravel MVC architecture with Eloquent-optimised queries and secure auth, authorization and validation.',
+        'tags'  => ['Laravel', 'Livewire', 'MySQL', 'Blade', 'REST API'],
+        'link'  => 'https://github.com/anshuraj669/laravel-crm',
+        'icon'  => '📇',
+    ],
+    [
         'title' => 'Visual Alertness Monitoring',
         'sub'   => 'Driver Drowsiness Detection',
-        'desc'  => 'Flask-based real-time monitoring with Dlib + Mediapipe, hitting 95% accuracy in detection logic.',
+        'desc'  => 'Real-time driver-safety monitor on a Flask backend using Dlib and Mediapipe, hitting 95% accuracy in detection logic and structured to handle concurrent requests as a scalable web-based solution.',
         'tags'  => ['Flask', 'Dlib', 'Mediapipe', 'Python'],
-        'link'  => 'https://github.com/anshuraj669/final',
+        'link'  => 'https://github.com/anshuraj669/final_year',
         'icon'  => '👁️',
     ],
     [
-        'title' => 'Dish Deals',
-        'sub'   => 'Restaurant Deals Platform',
-        'desc'  => 'Backend service aggregating food deals with clean APIs and structured data flow.',
-        'tags'  => ['Python', 'REST API'],
-        'link'  => 'https://github.com/anshuraj669/dish-deals',
-        'icon'  => '🍽️',
-    ],
-    [
-        'title' => 'Tractor Pricing',
-        'sub'   => 'Flutter Android App',
-        'desc'  => 'Cross-platform Flutter app for tractor pricing — 80% Dart, native platform support, and a shipped Android APK build.',
-        'tags'  => ['Flutter', 'Dart', 'Android'],
-        'link'  => 'https://github.com/anshuraj669/tractor_pricing',
-        'icon'  => '🚜',
+        'title' => 'Klonr',
+        'sub'   => 'AI Voice Cloning Studio',
+        'desc'  => 'Voice cloning + TTS platform powered by Spark-TTS-0.5B. FastAPI + React 19, JWT/Google OAuth, real-time audio streaming, and Swagger-documented REST API.',
+        'tags'  => ['FastAPI', 'React', 'Spark-TTS', 'OAuth'],
+        'link'  => 'https://github.com/anshuraj669/klonr',
+        'icon'  => '🎧',
     ],
     [
         'title' => 'Sakshi',
@@ -117,12 +127,12 @@ $projects = [
         'icon'  => '🎤',
     ],
     [
-        'title' => 'Klonr',
-        'sub'   => 'AI Voice Cloning Studio',
-        'desc'  => 'Voice cloning + TTS platform powered by Spark-TTS-0.5B. FastAPI + React 19, JWT/Google OAuth, real-time audio streaming, and Swagger-documented REST API.',
-        'tags'  => ['FastAPI', 'React', 'Spark-TTS', 'OAuth'],
-        'link'  => 'https://github.com/anshuraj669/klonr',
-        'icon'  => '🎧',
+        'title' => 'Dish Deals',
+        'sub'   => 'Restaurant Deals Platform',
+        'desc'  => 'Backend service aggregating food deals with clean APIs and structured data flow.',
+        'tags'  => ['Python', 'REST API'],
+        'link'  => 'https://github.com/anshuraj669/dish-deals',
+        'icon'  => '🍽️',
     ],
 ];
 
@@ -133,10 +143,10 @@ $education = [
 ];
 
 $certificates = [
-    ['name' => 'PHP and MySQL',              'date' => 'Oct 2023'],
-    ['name' => 'Introduction to Cybersecurity','date' => 'May 2023'],
-    ['name' => 'CyberOps Associate',         'date' => 'Jul 2023'],
-    ['name' => 'Introduction to Packet Tracer','date' => 'May 2023'],
+    ['name' => 'PHP and MySQL',               'date' => 'Oct 2023', 'link' => 'https://drive.google.com/file/d/1fAY9L-_ERx-MMrGmvuCNoLrp3ICa8Jum/view?usp=sharing'],
+    ['name' => 'Introduction to Cybersecurity','date' => 'May 2023', 'link' => 'https://drive.google.com/file/d/1hknmXqeo78yTqTwvk3dfsorBKK5WDonq/view?usp=sharing'],
+    ['name' => 'CyberOps Associate',          'date' => 'Jul 2023', 'link' => 'https://drive.google.com/file/d/1xZ1XhIuEM_aFnPWHMSG2JysEODeWVX5H/view?usp=drive_link'],
+    ['name' => 'Introduction to Packet Tracer','date' => 'May 2023', 'link' => 'https://drive.google.com/file/d/1I6axBtldjczdyRufgvMVVqIpsbxLr8kL/view?usp=drive_link'],
 ];
 
 $achievements = [
@@ -144,6 +154,7 @@ $achievements = [
         'title' => 'AGBA National Talent Hunt Scholarship',
         'desc'  => 'Supported by the Ministry of Electronics and Information Technology, Government of India.',
         'icon'  => '🏆',
+        'link'  => 'https://drive.google.com/file/d/1EhHKA8ibupBKzNSrw13IEpf8WqkYZSMA/view?usp=drivesdk',
     ],
     [
         'title' => '15% Map Data Accuracy Boost',
@@ -151,16 +162,16 @@ $achievements = [
         'icon'  => '📈',
     ],
     [
-        'title' => '99.9% Uptime Architecture',
-        'desc'  => 'Designed secure auth flow on BetCelebrate with zero data breaches in testing.',
-        'icon'  => '🛡️',
+        'title' => '250+ System Anomalies Reported',
+        'desc'  => 'Surfaced and validated data discrepancies across mapping and data-processing systems.',
+        'icon'  => '🔍',
     ],
 ];
 
 // Section chat-prompts — each section opens with a user → AI message exchange
 $sectionMeta = [
     'about'      => ['n' => '01', 'ask' => 'Who is Anshu Raj?',                'reply' => 'Glad you asked. Here\'s the short version 👇'],
-    'skills'     => ['n' => '02', 'ask' => 'What can he build?',               'reply' => 'Pulling up his full toolkit — backend, mobile, data, and tooling ⚡'],
+    'skills'     => ['n' => '02', 'ask' => 'What can he build?',               'reply' => 'Pulling up his full toolkit — languages, backend & APIs, databases, and DevOps ⚡'],
     'experience' => ['n' => '03', 'ask' => 'Where has he worked?',             'reply' => 'Here\'s his career trail so far 🛤️'],
     'projects'   => ['n' => '04', 'ask' => 'Show me his shipped work.',        'reply' => 'Sharing 6 live projects from his GitHub 📎'],
     'education'  => ['n' => '05', 'ask' => 'What\'s his academic background?', 'reply' => 'Walking through his learning timeline 🎓'],
@@ -236,7 +247,7 @@ $flash = $_GET['sent'] ?? null;
 <!-- Floating resume pill (replaces navbar) -->
 <a href="<?= htmlspecialchars($profile['resume']) ?>" target="_blank" class="float-resume magnetic" aria-label="Open résumé">
     <span class="cta-dot"></span>
-    <span>Resume.pdf</span>
+    <span>Resume</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
 </a>
 
@@ -347,16 +358,16 @@ $flash = $_GET['sent'] ?? null;
         <?= chat_head($sectionMeta['about']) ?>
         <div class="about-grid">
             <div class="about-text">
-                <p class="reveal">I'm a <strong>Backend Developer</strong> currently building systems at <a href="#" class="link-neon"><?= htmlspecialchars($profile['company']) ?></a>. My foundation is in <strong>SQL, Data Analysis, and System Design</strong> — I love turning messy requirements into normalized schemas, fast queries, and APIs that just work.</p>
-                <p class="reveal">I've shipped FastAPI services, audited self-driving data pipelines, and architected secure auth flows. Whether it's a 1,000-dataset validation job or a 10-endpoint REST surface, I focus on <strong>accuracy, reliability, and clean contracts</strong>.</p>
-                <p class="reveal">Outside of work, I'm exploring new patterns in distributed systems, contributing to open-source on GitHub, and sharpening my Python and Linux toolkit.</p>
+                <p class="reveal">I'm a <strong>Software Engineer</strong> building backend systems, REST APIs and data-driven applications with <strong>Python, Laravel, FastAPI and MySQL</strong> — currently at <a href="#" class="link-neon"><?= htmlspecialchars($profile['company']) ?></a>.</p>
+                <p class="reveal">At <strong>Wipro</strong> I analysed large datasets, identified system issues, and worked with engineering teams to improve data quality and reliability. Since then I've built projects that connect Laravel applications to Python services — including real-time analysis and security-focused systems.</p>
+                <p class="reveal">I enjoy understanding how systems work, solving practical technical problems, and turning requirements into reliable solutions. I'm especially drawn to roles where I work closely with teams and customers and take solutions from <strong>development through to deployment</strong>.</p>
                 <div class="about-tags reveal">
-                    <span class="chip">SQL Advanced</span>
-                    <span class="chip">FastAPI</span>
-                    <span class="chip">PostgreSQL</span>
+                    <span class="chip">Laravel</span>
                     <span class="chip">Python</span>
-                    <span class="chip">System Design</span>
-                    <span class="chip">REST</span>
+                    <span class="chip">FastAPI</span>
+                    <span class="chip">MySQL</span>
+                    <span class="chip">REST APIs</span>
+                    <span class="chip">Docker</span>
                 </div>
             </div>
             <div class="about-stats">
@@ -488,13 +499,14 @@ $flash = $_GET['sent'] ?? null;
                 <div class="extras-label"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · certifications.json</div>
                 <div class="cert-list">
                     <?php foreach ($certificates as $c): ?>
-                    <div class="cert-item">
+                    <?php $tag = isset($c['link']) ? 'a' : 'div'; ?>
+                    <<?= $tag ?> class="cert-item"<?= isset($c['link']) ? ' href="' . htmlspecialchars($c['link']) . '" target="_blank" rel="noopener"' : '' ?>>
                         <div class="cert-badge">✓</div>
                         <div>
                             <div class="cert-name"><?= htmlspecialchars($c['name']) ?></div>
                             <div class="cert-date"><?= htmlspecialchars($c['date']) ?></div>
                         </div>
-                    </div>
+                    </<?= $tag ?>>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -502,13 +514,14 @@ $flash = $_GET['sent'] ?? null;
                 <div class="extras-label"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · achievements.json</div>
                 <div class="ach-list">
                     <?php foreach ($achievements as $a): ?>
-                    <div class="ach-item tilt">
+                    <?php $tag = isset($a['link']) ? 'a' : 'div'; ?>
+                    <<?= $tag ?> class="ach-item tilt"<?= isset($a['link']) ? ' href="' . htmlspecialchars($a['link']) . '" target="_blank" rel="noopener"' : '' ?>>
                         <div class="ach-icon"><?= $a['icon'] ?></div>
                         <div>
                             <div class="ach-title"><?= htmlspecialchars($a['title']) ?></div>
                             <div class="ach-desc"><?= htmlspecialchars($a['desc']) ?></div>
                         </div>
-                    </div>
+                    </<?= $tag ?>>
                     <?php endforeach; ?>
                 </div>
             </div>

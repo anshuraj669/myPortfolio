@@ -31,7 +31,7 @@ if ($ok) {
     );
     @file_put_contents(__DIR__ . '/messages.log', $line, FILE_APPEND | LOCK_EX);
 
-    $to      = '07ankitmathur@gmail.com';
+    $to      = 'anshuraj.is.dev@gmail.com';
     $hdr     = "From: Portfolio <no-reply@" . ($_SERVER['HTTP_HOST'] ?? 'localhost') . ">\r\n";
     $hdr    .= "Reply-To: " . $email . "\r\n";
     $hdr    .= "Content-Type: text/plain; charset=UTF-8\r\n";

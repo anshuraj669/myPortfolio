@@ -1160,6 +1160,12 @@ input, textarea, button { font-family: inherit; }
     border-radius: 14px;
     transition: all .3s var(--ease);
 }
+a.cert-item,
+a.ach-item {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
 .cert-item:hover {
     border-color: var(--neon-1);
     transform: translateX(6px);
