@@ -13,5 +13,5 @@ ENV PORT=10000
 EXPOSE 10000
 
 # Built-in server resolves "/" to index.php first, then index.html, and serves
-# assets/ (css, js, images) and Resume.pdf directly.
+# assets/ (css, js, images) and the résumé PDF directly.
 CMD ["sh", "-c", "php -S 0.0.0.0:${PORT} -t /var/www/html"]

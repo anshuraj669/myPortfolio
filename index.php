@@ -11,7 +11,7 @@ $profile = [
     'phone'       => '+91 8292253230',
     'github'      => 'https://github.com/anshuraj669',
     'linkedin'    => 'https://www.linkedin.com/in/anshu~raj/',
-    'resume'      => 'Resume.pdf',
+    'resume'      => 'AnshuRajUpdated.pdf',
     'company'     => 'Incoweb Technologies',
     'company_role'=> 'Backend Developer',
     // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
@@ -48,6 +48,7 @@ $skills = [
         ['name' => 'Redis / Caching',    'level' => 80, 'icon' => '🧊'],
     ],
     'DevOps & Tools' => [
+        ['name' => 'AWS',        'level' => 78, 'icon' => '☁️'],
         ['name' => 'Docker',     'level' => 83, 'icon' => '🐳'],
         ['name' => 'Linux',      'level' => 88, 'icon' => '🐧'],
         ['name' => 'Nginx',      'level' => 80, 'icon' => '🌐'],
@@ -64,11 +65,11 @@ $experience = [
         'period'  => 'Mar 2026 — Present',
         'status'  => 'current',
         'points'  => [
-            'Developing backend services and RESTful APIs using Laravel, PHP, MySQL and Redis for business automation and customer-facing applications.',
-            'Integrating WhatsApp Business APIs and third-party services to automate customer communication, lead management, notifications and business workflows.',
-            'Designing database schemas and optimising MySQL queries and Eloquent relationships to improve application performance and data reliability.',
-            'Implementing authentication, authorization, validation, role-based access control and reusable Laravel services for secure, maintainable applications.',
-            'Translating business requirements into technical solutions — troubleshooting API, database and integration issues from development through deployment.',
+            'Built backend services and REST APIs using Laravel, PHP, MySQL and Redis for business automation applications.',
+            'Integrated WhatsApp Business APIs and third-party services for automated messaging, lead management, notifications and workflows.',
+            'Designed database schemas and optimised MySQL queries and Eloquent relationships for performance and data reliability.',
+            'Implemented authentication, authorization, validation and role-based access control using reusable Laravel services and middleware.',
+            'Debugged and resolved API, database and third-party integration issues from development through deployment.',
         ],
     ],
     [
@@ -78,9 +79,9 @@ $experience = [
         'status'  => 'past',
         'points'  => [
             'Analysed mapping and data-processing systems, identifying and reporting 250+ system anomalies and data discrepancies.',
-            'Collaborated with engineering teams to investigate issues and validate fixes, contributing to a 15% improvement in map data accuracy and reliability.',
-            'Processed and validated 1,000+ complex datasets for a self-driving vehicle project, ensuring data quality before AI model ingestion.',
-            'Used Deepen.AI and internal tools to analyse object-recognition outputs, contributing to a 10% improvement in AI model performance metrics.',
+            'Processed and validated 1,000+ complex datasets for an autonomous vehicle project before AI model ingestion.',
+            'Used Deepen.AI and internal tools to analyse object-recognition outputs and identify data-quality issues.',
+            'Collaborated with engineering teams to investigate issues, validate fixes, and improve data quality and reliability.',
         ],
     ],
 ];
@@ -89,7 +90,7 @@ $projects = [
     [
         'title' => 'Sentinel',
         'sub'   => 'Website Security Audit Platform',
-        'desc'  => 'Full-stack security auditing platform built with Laravel, Livewire, MySQL, FastAPI and Python. Role-based dashboards and scan history on the Laravel side talk to a stateless Python scanning engine over REST — covering HTTPS/TLS, security headers, DNS, exposed files, cookie security, malware, CORS and information leakage. Ships with a cross-platform CLI for offline source-code, dependency, secret and Git-history audits with report sync.',
+        'desc'  => 'Full-stack security auditing platform built with Laravel, Livewire, MySQL, FastAPI and Python. Laravel talks to a stateless Python scanning engine over REST for automated checks covering TLS, security headers, exposed files, cookies, CORS, malware and information leakage — with isolated checks, validation and secure handling of sensitive evidence. Ships with a CLI for source-code analysis, dependency scanning, secret detection and Git-history audits with report sync.',
         'tags'  => ['Laravel', 'Livewire', 'FastAPI', 'Python', 'MySQL', 'Security'],
         'link'  => 'https://github.com/anshuraj669/sentinel',
         'icon'  => '🛡️',
@@ -105,8 +106,8 @@ $projects = [
     [
         'title' => 'Visual Alertness Monitoring',
         'sub'   => 'Driver Drowsiness Detection',
-        'desc'  => 'Real-time driver-safety monitor on a Flask backend using Dlib and Mediapipe, hitting 95% accuracy in detection logic and structured to handle concurrent requests as a scalable web-based solution.',
-        'tags'  => ['Flask', 'Dlib', 'Mediapipe', 'Python'],
+        'desc'  => 'Flask-based computer-vision app for real-time driver drowsiness detection using Python, OpenCV, Dlib and Mediapipe — analysing facial landmarks and eye movement from a webcam feed to flag signs of fatigue with live alertness feedback.',
+        'tags'  => ['Flask', 'OpenCV', 'Dlib', 'Mediapipe', 'Python'],
         'link'  => 'https://github.com/anshuraj669/final_year',
         'icon'  => '👁️',
     ],
@@ -157,8 +158,8 @@ $achievements = [
         'link'  => 'https://drive.google.com/file/d/1EhHKA8ibupBKzNSrw13IEpf8WqkYZSMA/view?usp=drivesdk',
     ],
     [
-        'title' => '15% Map Data Accuracy Boost',
-        'desc'  => 'Drove measurable improvement in map data reliability while at Wipro.',
+        'title' => '1,000+ Datasets Validated',
+        'desc'  => 'Processed and validated complex datasets for an autonomous vehicle project before AI model ingestion at Wipro.',
         'icon'  => '📈',
     ],
     [
