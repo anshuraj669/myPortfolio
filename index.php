@@ -96,12 +96,12 @@ $projects = [
         'icon'  => '🛡️',
     ],
     [
-        'title' => 'Laravel CRM System',
-        'sub'   => 'Customer Relationship Management',
-        'desc'  => 'CRM built with Laravel, Livewire, MySQL and Blade — customer management, lead tracking and role-based access control, backed by RESTful APIs on a Laravel MVC architecture with Eloquent-optimised queries and secure auth, authorization and validation.',
-        'tags'  => ['Laravel', 'Livewire', 'MySQL', 'Blade', 'REST API'],
-        'link'  => 'https://github.com/anshuraj669/laravel-crm',
-        'icon'  => '📇',
+        'title' => 'Notification Engine',
+        'sub'   => 'Event-Driven Multi-Channel Notifications',
+        'desc'  => 'Event-driven notification engine for financial events, built with FastAPI, Kafka, PostgreSQL and Redis. Producers publish facts like order.executed or margin.call, and the engine routes them by priority across SMS, Email, Push, WhatsApp and in-app, in the user\'s language. A compliance chain enforces Indian telecom rules (DLT, DND, quiet hours, consent, frequency caps), and provider failover, circuit breakers, retries and a dead-letter queue sit behind every send. Every outcome is written to a delivery ledger, which also feeds a Streamlit operator dashboard and Prometheus alerting.',
+        'tags'  => ['FastAPI', 'Kafka', 'PostgreSQL', 'Redis', 'Python', 'Docker'],
+        'link'  => 'https://github.com/anshuraj669/NotificationEngine',
+        'icon'  => '🔔',
     ],
     [
         'title' => 'Visual Alertness Monitoring',
