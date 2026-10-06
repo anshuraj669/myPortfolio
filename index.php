@@ -104,20 +104,20 @@ $projects = [
         'icon'  => '🔔',
     ],
     [
+        'title' => 'Klonr',
+        'sub'   => 'AI Voice Cloning Studio',
+        'desc'  => 'AI voice cloning and text-to-speech platform powered by the Spark-TTS-0.5B model (PyTorch). Upload a short sample (MP3, WAV, M4A, OGG or FLAC) to clone any voice, then generate natural-sounding speech in it, with real-time audio streaming for low-latency playback and batch synthesis from CSV files. The FastAPI backend uses SQLAlchemy and JWT + Google OAuth 2.0 auth, and exposes a Swagger-documented REST API. The React 19 + Tailwind frontend has a dashboard with live usage stats, an activity feed and weekly usage charts. Dockerised, with GPU support.',
+        'tags'  => ['FastAPI', 'React', 'Spark-TTS', 'PyTorch', 'OAuth', 'Docker'],
+        'link'  => 'https://github.com/anshuraj669/klonr',
+        'icon'  => '🎧',
+    ],
+    [
         'title' => 'Visual Alertness Monitoring',
         'sub'   => 'Driver Drowsiness Detection',
         'desc'  => 'Flask-based computer-vision app for real-time driver drowsiness detection using Python, OpenCV, Dlib and Mediapipe — analysing facial landmarks and eye movement from a webcam feed to flag signs of fatigue with live alertness feedback.',
         'tags'  => ['Flask', 'OpenCV', 'Dlib', 'Mediapipe', 'Python'],
         'link'  => 'https://github.com/anshuraj669/final_year',
         'icon'  => '👁️',
-    ],
-    [
-        'title' => 'Klonr',
-        'sub'   => 'AI Voice Cloning Studio',
-        'desc'  => 'Voice cloning + TTS platform powered by Spark-TTS-0.5B. FastAPI + React 19, JWT/Google OAuth, real-time audio streaming, and Swagger-documented REST API.',
-        'tags'  => ['FastAPI', 'React', 'Spark-TTS', 'OAuth'],
-        'link'  => 'https://github.com/anshuraj669/klonr',
-        'icon'  => '🎧',
     ],
     [
         'title' => 'Sakshi',
