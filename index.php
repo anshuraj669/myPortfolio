@@ -104,6 +104,8 @@ $achievements = [
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
 // Cache-busting stamp so browsers and GitHub Pages pick up new CSS/JS after each build
+// Public URL of the deployed site (GitHub Pages); used for link previews. Keep the trailing slash.
+$siteUrl = 'https://anshuraj669.github.io/myPortfolio/';
 $v = fn(string $f) => $f . '?v=' . filemtime(__DIR__ . '/' . $f);
 
 $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
@@ -117,8 +119,27 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
     <title><?= e($profile['name']) ?> — <?= e($profile['title']) ?></title>
     <meta name="theme-color" content="#f6f9fb" />
     <meta name="description" content="<?= e($profile['tagline']) ?>" />
-    <link rel="icon" type="image/png" href="assets/images/Logo.png" />
-    <link rel="apple-touch-icon" href="assets/images/Logo.png" />
+    <link rel="canonical" href="<?= e($siteUrl) ?>" />
+    <link rel="icon" href="assets/icons/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Link previews (WhatsApp, LinkedIn, Slack, X, Discord, ...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="<?= e($profile['name']) ?>" />
+    <meta property="og:title" content="<?= e($profile['name']) ?> — <?= e($profile['title']) ?>" />
+    <meta property="og:description" content="<?= e($profile['tagline']) ?>" />
+    <meta property="og:url" content="<?= e($siteUrl) ?>" />
+    <meta property="og:image" content="<?= e($siteUrl) ?>assets/icons/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="<?= e($profile['name']) ?> — <?= e($profile['title']) ?>" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<?= e($profile['name']) ?> — <?= e($profile['title']) ?>" />
+    <meta name="twitter:description" content="<?= e($profile['tagline']) ?>" />
+    <meta name="twitter:image" content="<?= e($siteUrl) ?>assets/icons/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -172,7 +193,11 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
         </div>
         <div class="photo-wrap">
             <span class="photo-ring" aria-hidden="true"></span>
-            <img src="assets/images/profile.jpg" alt="Photo of <?= e($profile['name']) ?>" class="hero-photo" width="240" height="240" />
+            <picture>
+                <source srcset="<?= $v('assets/images/cartoon-avatar-still.jpg') ?>" media="(prefers-reduced-motion: reduce)" />
+                <img src="<?= $v('assets/images/cartoon-avatar.gif') ?>" class="hero-photo" width="560" height="554"
+                     alt="Animated illustration of <?= e($profile['name']) ?> working at a laptop" />
+            </picture>
         </div>
     </div>
 </section>
