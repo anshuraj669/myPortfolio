@@ -213,7 +213,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <!-- ============ PROJECTS ============ -->
 <section id="projects" class="section">
     <div class="container">
-        <h2 class="section-title reveal">Selected projects</h2>
+        <h2 class="section-title reveal">Projects</h2>
         <div class="projects">
             <?php foreach ($projects as $p): ?>
             <article class="reveal project">
