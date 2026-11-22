@@ -102,6 +102,9 @@ $achievements = [
 
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
+// Cache-busting stamp so browsers and GitHub Pages pick up new CSS/JS after each build
+$v = fn(string $f) => $f . '?v=' . filemtime(__DIR__ . '/' . $f);
+
 $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 ?>
 <!DOCTYPE html>
@@ -118,7 +121,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= $v('assets/css/style.css') ?>">
 </head>
 <body>
 
@@ -137,16 +140,23 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
             <a href="<?= e($profile['resume']) ?>" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
         </nav>
     </div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
 </header>
 
 <main id="top">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="hero-grid"></span>
+    </div>
     <div class="container hero-inner">
         <div class="hero-text">
+            <p class="badge"><span class="pulse"></span>Open to backend engineering roles</p>
             <p class="eyebrow"><?= e($profile['title']) ?> · <?= e($profile['company']) ?></p>
-            <h1><?= e($profile['name']) ?></h1>
+            <h1><?php $parts = explode(' ', $profile['name'], 2); ?><?= e($parts[0]) ?> <span class="grad-text"><?= e($parts[1] ?? '') ?></span></h1>
             <p class="lead"><?= e($profile['tagline']) ?></p>
             <div class="hero-actions">
                 <a href="#projects" class="btn">View projects</a>
@@ -159,7 +169,10 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
                 <li><?= e($profile['location']) ?></li>
             </ul>
         </div>
-        <img src="assets/images/profile.jpg" alt="Photo of <?= e($profile['name']) ?>" class="hero-photo" width="240" height="240" />
+        <div class="photo-wrap">
+            <span class="photo-ring" aria-hidden="true"></span>
+            <img src="assets/images/profile.jpg" alt="Photo of <?= e($profile['name']) ?>" class="hero-photo" width="240" height="240" />
+        </div>
     </div>
 </section>
 
@@ -176,7 +189,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <section id="experience" class="section">
     <div class="container narrow">
         <h2 class="section-title reveal">Experience</h2>
-        <div class="exp-list">
+        <div class="exp-list timeline reveal-line">
             <?php foreach ($experience as $exp): ?>
             <article class="reveal exp">
                 <div class="exp-head">
@@ -326,6 +339,6 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
     </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="<?= $v('assets/js/main.js') ?>"></script>
 </body>
 </html>

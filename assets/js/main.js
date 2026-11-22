@@ -26,13 +26,43 @@
                 io.unobserve(entry.target);
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal-line').forEach(el => io.observe(el));
         reveals.forEach(el => {
             const siblings = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
             el.style.transitionDelay = (Math.min(siblings.indexOf(el), 4) * 0.08) + 's';
             io.observe(el);
         });
     } else {
-        reveals.forEach(el => el.classList.add('visible'));
+        document.querySelectorAll('.reveal, .reveal-line').forEach(el => el.classList.add('visible'));
+    }
+
+    // Tags: index each one so CSS can stagger their pop-in
+    document.querySelectorAll('.tags').forEach(list => {
+        [...list.children].forEach((li, i) => li.style.setProperty('--i', i));
+    });
+
+    // Project cards: soft spotlight follows the cursor
+    document.querySelectorAll('.project').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+            card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        });
+    });
+
+    // Scroll progress bar under the nav
+    const progress = document.getElementById('progress');
+    if (progress) {
+        let queued = false;
+        const update = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            progress.style.transform = 'scaleX(' + (max > 0 ? window.scrollY / max : 0) + ')';
+            queued = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!queued) { queued = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        update();
     }
 
     // Nav: shadow after scrolling, and highlight the section in view
