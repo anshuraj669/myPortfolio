@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <script>
+        // Apply the saved theme before first paint (falls back to the OS light/dark setting).
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anshu Raj — Backend Developer</title>
     <meta name="description" content="I build backend systems, REST APIs and developer tools with Laravel, Python (FastAPI) and SQL — from schema design through to deployment." />
@@ -9,7 +18,7 @@
     <link rel="apple-touch-icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -26,6 +35,31 @@
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
+            <div class="theme-switch">
+                <button type="button" class="theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu">
+                    <span class="theme-dot"></span><span id="themeLabel">Theme</span>
+                </button>
+                <ul class="theme-menu" id="themeMenu" role="menu">
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light">
+                        <span class="swatch" style="background: linear-gradient(135deg, #ffffff 50%, #2563eb 50%)"></span>
+                        Light                    </button></li>
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark">
+                        <span class="swatch" style="background: linear-gradient(135deg, #0f1115 50%, #60a5fa 50%)"></span>
+                        Graphite                    </button></li>
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="midnight">
+                        <span class="swatch" style="background: linear-gradient(135deg, #0a0f1f 50%, #22d3ee 50%)"></span>
+                        Midnight                    </button></li>
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="forest">
+                        <span class="swatch" style="background: linear-gradient(135deg, #0d1512 50%, #34d399 50%)"></span>
+                        Forest                    </button></li>
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="paper">
+                        <span class="swatch" style="background: linear-gradient(135deg, #faf7f2 50%, #b45309 50%)"></span>
+                        Paper                    </button></li>
+                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="ocean">
+                        <span class="swatch" style="background: linear-gradient(135deg, #f6f9fb 50%, #0f766e 50%)"></span>
+                        Ocean                    </button></li>
+                                    </ul>
+            </div>
             <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
         </nav>
     </div>

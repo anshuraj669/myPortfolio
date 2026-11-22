@@ -102,12 +102,30 @@ $achievements = [
 
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
+$themes = [
+    'light'    => ['label' => 'Light',    'bg' => '#ffffff', 'accent' => '#2563eb'],
+    'dark'     => ['label' => 'Graphite', 'bg' => '#0f1115', 'accent' => '#60a5fa'],
+    'midnight' => ['label' => 'Midnight', 'bg' => '#0a0f1f', 'accent' => '#22d3ee'],
+    'forest'   => ['label' => 'Forest',   'bg' => '#0d1512', 'accent' => '#34d399'],
+    'paper'    => ['label' => 'Paper',    'bg' => '#faf7f2', 'accent' => '#b45309'],
+    'ocean'    => ['label' => 'Ocean',    'bg' => '#f6f9fb', 'accent' => '#0f766e'],
+];
+
 $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <script>
+        // Apply the saved theme before first paint (falls back to the OS light/dark setting).
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= e($profile['name']) ?> — <?= e($profile['title']) ?></title>
     <meta name="description" content="<?= e($profile['tagline']) ?>" />
@@ -115,7 +133,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
     <link rel="apple-touch-icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -132,6 +150,19 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
+            <div class="theme-switch">
+                <button type="button" class="theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu">
+                    <span class="theme-dot"></span><span id="themeLabel">Theme</span>
+                </button>
+                <ul class="theme-menu" id="themeMenu" role="menu">
+                    <?php foreach ($themes as $key => $t): ?>
+                    <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="<?= e($key) ?>">
+                        <span class="swatch" style="background: linear-gradient(135deg, <?= e($t['bg']) ?> 50%, <?= e($t['accent']) ?> 50%)"></span>
+                        <?= e($t['label']) ?>
+                    </button></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
             <a href="<?= e($profile['resume']) ?>" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
         </nav>
     </div>
