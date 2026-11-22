@@ -2,8 +2,8 @@
 // Portfolio data — edit here to update content sitewide, then run ./build.sh
 $profile = [
     'name'         => 'Anshu Raj',
-    'title'        => 'Backend Developer',
-    'tagline'      => 'I build backend systems, REST APIs and developer tools with Laravel, Python (FastAPI) and SQL — from schema design through to deployment.',
+    'title'        => 'Full Stack Developer',
+    'tagline'      => 'I build full-stack web applications, REST APIs and developer tools with Laravel, Python (FastAPI), React and SQL — from schema design through to deployment.',
     'location'     => 'Patna, Bihar, India',
     'email'        => 'anshuraj.is.dev@gmail.com',
     'phone'        => '+91 8292253230',
@@ -21,7 +21,7 @@ $formEnabled = $profile['web3forms_key'] !== '' && $profile['web3forms_key'] !==
 $experience = [
     [
         'company' => 'Incoweb Technologies',
-        'role'    => 'Backend Developer',
+        'role'    => 'Full Stack Developer',
         'period'  => 'Mar 2026 — Present',
         'points'  => [
             'Build backend services and REST APIs with Laravel, PHP, MySQL and Redis for business automation applications.',
@@ -77,6 +77,7 @@ $projects = [
 
 $skills = [
     'Languages'      => ['Python', 'PHP', 'SQL', 'JavaScript', 'HTML / CSS'],
+    'Frontend'       => ['React', 'Livewire', 'Tailwind CSS', 'JavaScript'],
     'Backend'        => ['Laravel', 'FastAPI', 'REST API design', 'Auth & RBAC', 'Kafka', 'Third-party integrations'],
     'Data'           => ['MySQL', 'PostgreSQL', 'Redis', 'Schema design', 'Query optimisation'],
     'DevOps & Tools' => ['Docker', 'Linux', 'Nginx', 'AWS', 'Git', 'Postman'],
@@ -154,7 +155,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
     </div>
     <div class="container hero-inner">
         <div class="hero-text">
-            <p class="badge"><span class="pulse"></span>Open to backend engineering roles</p>
+            <p class="badge"><span class="pulse"></span>Open to full-stack engineering roles</p>
             <p class="eyebrow"><?= e($profile['title']) ?> · <?= e($profile['company']) ?></p>
             <h1><?php $parts = explode(' ', $profile['name'], 2); ?><?= e($parts[0]) ?> <span class="grad-text"><?= e($parts[1] ?? '') ?></span></h1>
             <p class="lead"><?= e($profile['tagline']) ?></p>
@@ -180,7 +181,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <section id="about" class="section">
     <div class="container narrow">
         <h2 class="section-title reveal">About</h2>
-        <p class="reveal">I'm a backend developer at <strong><?= e($profile['company']) ?></strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
+        <p class="reveal">I'm a full-stack developer at <strong><?= e($profile['company']) ?></strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
         <p class="reveal">Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
     </div>
 </section>
@@ -301,7 +302,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <section id="contact" class="section">
     <div class="container narrow">
         <h2 class="section-title reveal">Contact</h2>
-        <p class="reveal">I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
+        <p class="reveal">I'm open to full-stack and backend engineering roles. The quickest way to reach me is email.</p>
         <div class="contact-grid<?= $formEnabled ? '' : ' single' ?>">
             <ul class="reveal contact-list">
                 <li><span>Email</span><a href="mailto:<?= e($profile['email']) ?>"><?= e($profile['email']) ?></a></li>
