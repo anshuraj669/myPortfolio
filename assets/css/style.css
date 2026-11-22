@@ -3,105 +3,8 @@
    Simple, readable, light/dark aware.
    ============================================ */
 
-/* ---------- Themes ----------
-   Set on <html data-theme="...">; chosen from the switcher in the nav and
-   saved in localStorage. First visit follows the OS light/dark setting. */
-:root,
-[data-theme="light"] {
-    --bg: #ffffff;
-    --bg-alt: #f7f7f8;
-    --surface: #ffffff;
-    --text: #18181b;
-    --muted: #5b5b66;
-    --border: #e4e4e7;
-    --accent: #2563eb;
-    --accent-hover: #1d4ed8;
-    --on-accent: #ffffff;
-    --tag-bg: #f1f5f9;
-    --tag-text: #334155;
-    --glow: rgba(37, 99, 235, .08);
-    --heading: var(--font);
-    color-scheme: light;
-
-    --radius: 10px;
-    --max: 1040px;
-    --narrow: 760px;
-    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
-}
-
-/* Graphite — neutral dark */
-[data-theme="dark"] {
-    --bg: #0f1115;
-    --bg-alt: #151821;
-    --surface: #12151c;
-    --text: #e7e7ea;
-    --muted: #9a9aa6;
-    --border: #262a35;
-    --accent: #60a5fa;
-    --accent-hover: #93c5fd;
-    --on-accent: #0f1115;
-    --tag-bg: #1c2130;
-    --tag-text: #c7d2fe;
-    --glow: rgba(96, 165, 250, .10);
-    color-scheme: dark;
-}
-
-/* Midnight — deep navy with cyan */
-[data-theme="midnight"] {
-    --bg: #0a0f1f;
-    --bg-alt: #0e1528;
-    --surface: #0c1224;
-    --text: #e6ecf7;
-    --muted: #8d9ab5;
-    --border: #1e2942;
-    --accent: #22d3ee;
-    --accent-hover: #67e8f9;
-    --on-accent: #06222a;
-    --tag-bg: #12223a;
-    --tag-text: #a5f3fc;
-    --glow: rgba(34, 211, 238, .12);
-    color-scheme: dark;
-}
-
-/* Forest — dark green with emerald */
-[data-theme="forest"] {
-    --bg: #0d1512;
-    --bg-alt: #111c18;
-    --surface: #0f1915;
-    --text: #e3ece7;
-    --muted: #8fa69b;
-    --border: #1f2f29;
-    --accent: #34d399;
-    --accent-hover: #6ee7b7;
-    --on-accent: #052e1f;
-    --tag-bg: #15261f;
-    --tag-text: #a7f3d0;
-    --glow: rgba(52, 211, 153, .10);
-    color-scheme: dark;
-}
-
-/* Paper — warm editorial, serif headings */
-[data-theme="paper"] {
-    --bg: #faf7f2;
-    --bg-alt: #f3eee5;
-    --surface: #fffdf9;
-    --text: #2a2520;
-    --muted: #6b6157;
-    --border: #e4dccf;
-    --accent: #b45309;
-    --accent-hover: #92400e;
-    --on-accent: #ffffff;
-    --tag-bg: #efe6d8;
-    --tag-text: #5c4630;
-    --glow: rgba(180, 83, 9, .07);
-    --heading: var(--serif);
-    color-scheme: light;
-}
-
-/* Ocean — cool light with teal */
-[data-theme="ocean"] {
+:root {
+    /* Ocean palette — cool light grey-blue with teal */
     --bg: #f6f9fb;
     --bg-alt: #edf3f7;
     --surface: #ffffff;
@@ -115,10 +18,13 @@
     --tag-text: #134e4a;
     --glow: rgba(15, 118, 110, .08);
     color-scheme: light;
-}
 
-body, .nav, .section, .project, .btn, .tags li, .contact-form input, .contact-form textarea {
-    transition: background-color .25s ease, border-color .25s ease, color .25s ease;
+    --radius: 10px;
+    --max: 1040px;
+    --narrow: 760px;
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    --ease: cubic-bezier(.22, 1, .36, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -139,7 +45,7 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-h1, h2, h3 { line-height: 1.25; margin: 0; color: var(--text); font-family: var(--heading); }
+h1, h2, h3 { line-height: 1.25; margin: 0; color: var(--text); }
 p { margin: 0 0 1em; }
 ul { margin: 0; padding: 0; }
 strong { font-weight: 600; }
@@ -318,39 +224,60 @@ strong { font-weight: 600; }
 .footer a { color: var(--muted); }
 .footer a:hover { color: var(--text); }
 
-/* ---------- Theme switcher ---------- */
-.theme-switch { position: relative; }
-.theme-btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 10px;
-    font: 500 14px var(--font); color: var(--muted);
-    background: transparent; border: 1px solid var(--border); border-radius: 8px;
-    cursor: pointer;
+/* ============================================
+   Motion — subtle, and off for prefers-reduced-motion
+   ============================================ */
+
+/* Hover / interaction transitions */
+.btn, .project, .tags li, .nav, .contact-form input, .contact-form textarea {
+    transition: background-color .2s, border-color .2s, color .2s, box-shadow .25s var(--ease), transform .25s var(--ease);
 }
-.theme-btn:hover { color: var(--text); border-color: var(--muted); }
-.theme-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--bg-alt); }
-.theme-menu {
-    position: absolute; right: 0; top: calc(100% + 8px);
-    min-width: 190px; padding: 6px;
-    list-style: none;
-    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-    display: none;
+.btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px -6px rgba(15, 118, 110, .45); }
+.btn-outline:hover { box-shadow: 0 6px 16px -8px rgba(15, 37, 48, .25); }
+.btn:active { transform: translateY(0); box-shadow: none; }
+
+.project:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    box-shadow: 0 14px 32px -18px rgba(15, 37, 48, .28);
 }
-.theme-menu.open { display: block; }
-.theme-menu button {
-    display: flex; align-items: center; gap: 10px; width: 100%;
-    padding: 8px 10px;
-    font: 400 14px var(--font); color: var(--text); text-align: left;
-    background: none; border: 0; border-radius: 6px; cursor: pointer;
+.project h3 svg, .more a svg { transition: transform .25s var(--ease); }
+.project h3 a:hover svg, .more a:hover svg { transform: translate(2px, -2px); }
+
+/* Nav: underline grows from the left; shadow once the page is scrolled */
+.nav-links a:not(.btn) { position: relative; }
+.nav-links a:not(.btn)::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+    background: var(--accent); border-radius: 2px;
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .25s var(--ease);
 }
-.theme-menu button:hover { background: var(--bg-alt); }
-.theme-menu button[aria-checked="true"]::after { content: '✓'; margin-left: auto; color: var(--accent); }
-.swatch {
-    width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0;
-    border: 1px solid rgba(127, 127, 127, .35);
-}
-@media (max-width: 760px) {
-    .theme-switch { margin-top: 8px; }
-    .theme-menu { left: 0; right: auto; }
+.nav-links a:not(.btn):hover::after,
+.nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--text); }
+.nav.scrolled { box-shadow: 0 4px 20px -12px rgba(15, 37, 48, .25); }
+@media (max-width: 760px) { .nav-links a:not(.btn)::after { display: none; } }
+
+/* Hero: staggered entrance on load */
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes fade-scale { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+.hero-text > * { animation: rise .7s var(--ease) both; }
+.hero-text > :nth-child(1) { animation-delay: .05s; }
+.hero-text > :nth-child(2) { animation-delay: .12s; }
+.hero-text > :nth-child(3) { animation-delay: .19s; }
+.hero-text > :nth-child(4) { animation-delay: .26s; }
+.hero-text > :nth-child(5) { animation-delay: .33s; }
+.hero-photo { animation: fade-scale .9s var(--ease) .15s both; }
+
+/* Hero background: the accent glow drifts very slowly */
+.hero { background-size: 140% 140%; animation: drift 18s ease-in-out infinite alternate; }
+@keyframes drift { from { background-position: 0% 0%; } to { background-position: 100% 100%; } }
+
+/* Scroll reveal — only hidden when JS is running, so the page works without it */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.js .reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
 }

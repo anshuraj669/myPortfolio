@@ -102,38 +102,22 @@ $achievements = [
 
 function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
-$themes = [
-    'light'    => ['label' => 'Light',    'bg' => '#ffffff', 'accent' => '#2563eb'],
-    'dark'     => ['label' => 'Graphite', 'bg' => '#0f1115', 'accent' => '#60a5fa'],
-    'midnight' => ['label' => 'Midnight', 'bg' => '#0a0f1f', 'accent' => '#22d3ee'],
-    'forest'   => ['label' => 'Forest',   'bg' => '#0d1512', 'accent' => '#34d399'],
-    'paper'    => ['label' => 'Paper',    'bg' => '#faf7f2', 'accent' => '#b45309'],
-    'ocean'    => ['label' => 'Ocean',    'bg' => '#f6f9fb', 'accent' => '#0f766e'],
-];
-
 $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <script>
-        // Apply the saved theme before first paint (falls back to the OS light/dark setting).
-        (function () {
-            var t = null;
-            try { t = localStorage.getItem('theme'); } catch (e) {}
-            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', t);
-        })();
-    </script>
+    <script>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= e($profile['name']) ?> — <?= e($profile['title']) ?></title>
+    <meta name="theme-color" content="#f6f9fb" />
     <meta name="description" content="<?= e($profile['tagline']) ?>" />
     <link rel="icon" type="image/png" href="assets/images/Logo.png" />
     <link rel="apple-touch-icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -150,19 +134,6 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
-            <div class="theme-switch">
-                <button type="button" class="theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu">
-                    <span class="theme-dot"></span><span id="themeLabel">Theme</span>
-                </button>
-                <ul class="theme-menu" id="themeMenu" role="menu">
-                    <?php foreach ($themes as $key => $t): ?>
-                    <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="<?= e($key) ?>">
-                        <span class="swatch" style="background: linear-gradient(135deg, <?= e($t['bg']) ?> 50%, <?= e($t['accent']) ?> 50%)"></span>
-                        <?= e($t['label']) ?>
-                    </button></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
             <a href="<?= e($profile['resume']) ?>" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
         </nav>
     </div>
@@ -195,19 +166,19 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <!-- ============ ABOUT ============ -->
 <section id="about" class="section">
     <div class="container narrow">
-        <h2 class="section-title">About</h2>
-        <p>I'm a backend developer at <strong><?= e($profile['company']) ?></strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
-        <p>Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
+        <h2 class="section-title reveal">About</h2>
+        <p class="reveal">I'm a backend developer at <strong><?= e($profile['company']) ?></strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
+        <p class="reveal">Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
     </div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title reveal">Experience</h2>
         <div class="exp-list">
             <?php foreach ($experience as $exp): ?>
-            <article class="exp">
+            <article class="reveal exp">
                 <div class="exp-head">
                     <div>
                         <h3><?= e($exp['role']) ?></h3>
@@ -229,10 +200,10 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <!-- ============ PROJECTS ============ -->
 <section id="projects" class="section">
     <div class="container">
-        <h2 class="section-title">Selected projects</h2>
+        <h2 class="section-title reveal">Selected projects</h2>
         <div class="projects">
             <?php foreach ($projects as $p): ?>
-            <article class="project">
+            <article class="reveal project">
                 <div class="project-head">
                     <h3><a href="<?= e($p['link']) ?>" target="_blank" rel="noopener"><?= e($p['title']) ?> <?= $arrow ?></a></h3>
                     <p class="project-sub"><?= e($p['sub']) ?></p>
@@ -246,17 +217,17 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
             </article>
             <?php endforeach; ?>
         </div>
-        <p class="more"><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">More on GitHub <?= $arrow ?></a></p>
+        <p class="more reveal"><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">More on GitHub <?= $arrow ?></a></p>
     </div>
 </section>
 
 <!-- ============ SKILLS ============ -->
 <section id="skills" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title reveal">Skills</h2>
         <dl class="skills">
             <?php foreach ($skills as $category => $items): ?>
-            <div class="skill-row">
+            <div class="reveal skill-row">
                 <dt><?= e($category) ?></dt>
                 <dd>
                     <ul class="tags">
@@ -274,8 +245,8 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
 <section id="education" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Education &amp; certifications</h2>
-        <div class="two-col">
+        <h2 class="section-title reveal">Education &amp; certifications</h2>
+        <div class="two-col reveal">
             <div>
                 <h3 class="sub-title">Education</h3>
                 <?php foreach ($education as $ed): ?>
@@ -316,10 +287,10 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Contact</h2>
-        <p>I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="reveal">I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
         <div class="contact-grid<?= $formEnabled ? '' : ' single' ?>">
-            <ul class="contact-list">
+            <ul class="reveal contact-list">
                 <li><span>Email</span><a href="mailto:<?= e($profile['email']) ?>"><?= e($profile['email']) ?></a></li>
                 <li><span>Phone</span><a href="tel:<?= e(str_replace(' ', '', $profile['phone'])) ?>"><?= e($profile['phone']) ?></a></li>
                 <li><span>GitHub</span><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">@<?= e($profile['github_user']) ?></a></li>
@@ -327,7 +298,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
                 <li><span>Location</span><?= e($profile['location']) ?></li>
             </ul>
             <?php if ($formEnabled): ?>
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+            <form action="https://api.web3forms.com/submit" method="POST" class="reveal contact-form" id="contactForm">
                 <input type="hidden" name="access_key" value="<?= e($profile['web3forms_key']) ?>" />
                 <input type="hidden" name="from_name" value="<?= e($profile['name']) ?> Portfolio" />
                 <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />

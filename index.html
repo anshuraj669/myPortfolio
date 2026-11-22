@@ -2,23 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <script>
-        // Apply the saved theme before first paint (falls back to the OS light/dark setting).
-        (function () {
-            var t = null;
-            try { t = localStorage.getItem('theme'); } catch (e) {}
-            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', t);
-        })();
-    </script>
+    <script>document.documentElement.classList.add('js');</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anshu Raj — Backend Developer</title>
+    <meta name="theme-color" content="#f6f9fb" />
     <meta name="description" content="I build backend systems, REST APIs and developer tools with Laravel, Python (FastAPI) and SQL — from schema design through to deployment." />
     <link rel="icon" type="image/png" href="assets/images/Logo.png" />
     <link rel="apple-touch-icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -35,31 +28,6 @@
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
-            <div class="theme-switch">
-                <button type="button" class="theme-btn" id="themeBtn" aria-haspopup="true" aria-expanded="false" aria-controls="themeMenu">
-                    <span class="theme-dot"></span><span id="themeLabel">Theme</span>
-                </button>
-                <ul class="theme-menu" id="themeMenu" role="menu">
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="light">
-                        <span class="swatch" style="background: linear-gradient(135deg, #ffffff 50%, #2563eb 50%)"></span>
-                        Light                    </button></li>
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="dark">
-                        <span class="swatch" style="background: linear-gradient(135deg, #0f1115 50%, #60a5fa 50%)"></span>
-                        Graphite                    </button></li>
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="midnight">
-                        <span class="swatch" style="background: linear-gradient(135deg, #0a0f1f 50%, #22d3ee 50%)"></span>
-                        Midnight                    </button></li>
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="forest">
-                        <span class="swatch" style="background: linear-gradient(135deg, #0d1512 50%, #34d399 50%)"></span>
-                        Forest                    </button></li>
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="paper">
-                        <span class="swatch" style="background: linear-gradient(135deg, #faf7f2 50%, #b45309 50%)"></span>
-                        Paper                    </button></li>
-                                        <li><button type="button" role="menuitemradio" aria-checked="false" data-theme-value="ocean">
-                        <span class="swatch" style="background: linear-gradient(135deg, #f6f9fb 50%, #0f766e 50%)"></span>
-                        Ocean                    </button></li>
-                                    </ul>
-            </div>
             <a href="Resume.pdf" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
         </nav>
     </div>
@@ -92,18 +60,18 @@
 <!-- ============ ABOUT ============ -->
 <section id="about" class="section">
     <div class="container narrow">
-        <h2 class="section-title">About</h2>
-        <p>I'm a backend developer at <strong>Incoweb Technologies</strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
-        <p>Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
+        <h2 class="section-title reveal">About</h2>
+        <p class="reveal">I'm a backend developer at <strong>Incoweb Technologies</strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
+        <p class="reveal">Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
     </div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title reveal">Experience</h2>
         <div class="exp-list">
-                        <article class="exp">
+                        <article class="reveal exp">
                 <div class="exp-head">
                     <div>
                         <h3>Backend Developer</h3>
@@ -119,7 +87,7 @@
                                         <li>Debug and resolve API, database and integration issues from development through deployment.</li>
                                     </ul>
             </article>
-                        <article class="exp">
+                        <article class="reveal exp">
                 <div class="exp-head">
                     <div>
                         <h3>Associate</h3>
@@ -141,9 +109,9 @@
 <!-- ============ PROJECTS ============ -->
 <section id="projects" class="section">
     <div class="container">
-        <h2 class="section-title">Selected projects</h2>
+        <h2 class="section-title reveal">Selected projects</h2>
         <div class="projects">
-                        <article class="project">
+                        <article class="reveal project">
                 <div class="project-head">
                     <h3><a href="https://github.com/anshuraj669/tracebase" target="_blank" rel="noopener">Tracebase <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
                     <p class="project-sub">Self-hosted AI for code, logs and backups</p>
@@ -159,7 +127,7 @@
                                         <li>Docker</li>
                                     </ul>
             </article>
-                        <article class="project">
+                        <article class="reveal project">
                 <div class="project-head">
                     <h3><a href="https://github.com/anshuraj669/sentinel" target="_blank" rel="noopener">Sentinel <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
                     <p class="project-sub">Website security audit platform</p>
@@ -173,7 +141,7 @@
                                         <li>MySQL</li>
                                     </ul>
             </article>
-                        <article class="project">
+                        <article class="reveal project">
                 <div class="project-head">
                     <h3><a href="https://github.com/anshuraj669/NotificationEngine" target="_blank" rel="noopener">Notification Engine <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
                     <p class="project-sub">Event-driven, multi-channel notifications</p>
@@ -188,7 +156,7 @@
                                         <li>Docker</li>
                                     </ul>
             </article>
-                        <article class="project">
+                        <article class="reveal project">
                 <div class="project-head">
                     <h3><a href="https://github.com/anshuraj669/klonr" target="_blank" rel="noopener">Klonr <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
                     <p class="project-sub">Voice cloning and text-to-speech platform</p>
@@ -203,16 +171,16 @@
                                     </ul>
             </article>
                     </div>
-        <p class="more"><a href="https://github.com/anshuraj669" target="_blank" rel="noopener">More on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
+        <p class="more reveal"><a href="https://github.com/anshuraj669" target="_blank" rel="noopener">More on GitHub <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></p>
     </div>
 </section>
 
 <!-- ============ SKILLS ============ -->
 <section id="skills" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title reveal">Skills</h2>
         <dl class="skills">
-                        <div class="skill-row">
+                        <div class="reveal skill-row">
                 <dt>Languages</dt>
                 <dd>
                     <ul class="tags">
@@ -224,7 +192,7 @@
                                             </ul>
                 </dd>
             </div>
-                        <div class="skill-row">
+                        <div class="reveal skill-row">
                 <dt>Backend</dt>
                 <dd>
                     <ul class="tags">
@@ -237,7 +205,7 @@
                                             </ul>
                 </dd>
             </div>
-                        <div class="skill-row">
+                        <div class="reveal skill-row">
                 <dt>Data</dt>
                 <dd>
                     <ul class="tags">
@@ -249,7 +217,7 @@
                                             </ul>
                 </dd>
             </div>
-                        <div class="skill-row">
+                        <div class="reveal skill-row">
                 <dt>DevOps &amp; Tools</dt>
                 <dd>
                     <ul class="tags">
@@ -269,8 +237,8 @@
 <!-- ============ EDUCATION & CERTIFICATIONS ============ -->
 <section id="education" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Education &amp; certifications</h2>
-        <div class="two-col">
+        <h2 class="section-title reveal">Education &amp; certifications</h2>
+        <div class="two-col reveal">
             <div>
                 <h3 class="sub-title">Education</h3>
                                 <div class="line-item">
@@ -312,10 +280,10 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="section">
     <div class="container narrow">
-        <h2 class="section-title">Contact</h2>
-        <p>I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="reveal">I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
         <div class="contact-grid single">
-            <ul class="contact-list">
+            <ul class="reveal contact-list">
                 <li><span>Email</span><a href="mailto:anshuraj.is.dev@gmail.com">anshuraj.is.dev@gmail.com</a></li>
                 <li><span>Phone</span><a href="tel:+918292253230">+91 8292253230</a></li>
                 <li><span>GitHub</span><a href="https://github.com/anshuraj669" target="_blank" rel="noopener">@anshuraj669</a></li>

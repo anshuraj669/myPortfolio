@@ -16,43 +16,42 @@
         }));
     }
 
-    // Theme switcher
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('themeBtn');
-    const themeMenu = document.getElementById('themeMenu');
-    const themeLabel = document.getElementById('themeLabel');
-    if (themeBtn && themeMenu) {
-        const options = themeMenu.querySelectorAll('[data-theme-value]');
-        const sync = () => {
-            const current = root.getAttribute('data-theme');
-            options.forEach(o => {
-                const on = o.dataset.themeValue === current;
-                o.setAttribute('aria-checked', String(on));
-                if (on && themeLabel) themeLabel.textContent = o.textContent.trim();
+    // Scroll reveal: fade sections in as they enter the viewport, staggering siblings
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                io.unobserve(entry.target);
             });
-        };
-        const setMenu = (open) => {
-            themeMenu.classList.toggle('open', open);
-            themeBtn.setAttribute('aria-expanded', String(open));
-        };
-        themeBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            setMenu(!themeMenu.classList.contains('open'));
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => {
+            const siblings = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
+            el.style.transitionDelay = (Math.min(siblings.indexOf(el), 4) * 0.08) + 's';
+            io.observe(el);
         });
-        options.forEach(o => o.addEventListener('click', () => {
-            root.setAttribute('data-theme', o.dataset.themeValue);
-            try { localStorage.setItem('theme', o.dataset.themeValue); } catch (err) {}
-            sync();
-            setMenu(false);
-        }));
-        document.addEventListener('click', (e) => {
-            if (!themeMenu.contains(e.target)) setMenu(false);
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') setMenu(false);
-        });
-        sync();
+    } else {
+        reveals.forEach(el => el.classList.add('visible'));
     }
+
+    // Nav: shadow after scrolling, and highlight the section in view
+    const nav = document.querySelector('.nav');
+    const onScroll = () => nav && nav.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+    const sectionIO = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+        });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navAnchors.forEach(a => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) sectionIO.observe(target);
+    });
 
     // Contact form (Web3Forms) — submit without leaving the page
     const form = document.getElementById('contactForm');
