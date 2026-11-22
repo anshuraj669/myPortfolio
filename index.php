@@ -1,440 +1,195 @@
 <?php
-// Portfolio data — edit here to update content sitewide
+// Portfolio data — edit here to update content sitewide, then run ./build.sh
 $profile = [
-    'name'        => 'Anshu Raj',
-    'first'       => 'Anshu',
-    'last'        => 'Raj',
-    'tagline'     => 'Software Engineer building backend systems, REST APIs, and data-driven applications with Laravel, Python and MySQL.',
-    'roles'       => ['Backend Developer', 'Software Engineer', 'API Developer', 'Problem Solver'],
-    'location'    => 'Patna, Bihar, India',
-    'email'       => 'anshuraj.is.dev@gmail.com',
-    'phone'       => '+91 8292253230',
-    'github'      => 'https://github.com/anshuraj669',
-    'linkedin'    => 'https://www.linkedin.com/in/anshu~raj/',
-    'resume'      => 'AnshuRajUpdated.pdf',
-    'company'     => 'Incoweb Technologies',
-    'company_role'=> 'Backend Developer',
+    'name'         => 'Anshu Raj',
+    'title'        => 'Backend Developer',
+    'tagline'      => 'I build backend systems, REST APIs and developer tools with Laravel, Python (FastAPI) and SQL — from schema design through to deployment.',
+    'location'     => 'Patna, Bihar, India',
+    'email'        => 'anshuraj.is.dev@gmail.com',
+    'phone'        => '+91 8292253230',
+    'github'       => 'https://github.com/anshuraj669',
+    'github_user'  => 'anshuraj669',
+    'linkedin'     => 'https://www.linkedin.com/in/anshu~raj/',
+    'resume'       => 'Resume.pdf',
+    'company'      => 'Incoweb Technologies',
     // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
+    // While it is left as the placeholder, the contact form is hidden and only direct contact links are shown.
     'web3forms_key' => 'YOUR_WEB3FORMS_ACCESS_KEY',
 ];
-
-$stats = [
-    ['num' => 1000, 'label' => 'Datasets Processed',      'suffix' => '+'],
-    ['num' => 250,  'label' => 'Anomalies Reported',      'suffix' => '+'],
-    ['num' => 10,   'label' => 'REST APIs Built',         'suffix' => '+'],
-    ['num' => 20,   'label' => 'Repositories Shipped',    'suffix' => '+'],
-];
-
-$skills = [
-    'Languages' => [
-        ['name' => 'Python',     'level' => 92, 'icon' => '🐍'],
-        ['name' => 'PHP',        'level' => 88, 'icon' => '🐘'],
-        ['name' => 'SQL',        'level' => 90, 'icon' => '🗄️'],
-        ['name' => 'JavaScript', 'level' => 84, 'icon' => '🟨'],
-        ['name' => 'HTML/CSS',   'level' => 88, 'icon' => '🎨'],
-    ],
-    'Backend & APIs' => [
-        ['name' => 'Laravel',          'level' => 88, 'icon' => '🎯'],
-        ['name' => 'FastAPI',          'level' => 86, 'icon' => '⚡'],
-        ['name' => 'REST APIs',        'level' => 90, 'icon' => '🔗'],
-        ['name' => 'Auth & RBAC',      'level' => 85, 'icon' => '🔐'],
-        ['name' => 'API Integration',  'level' => 87, 'icon' => '🔌'],
-    ],
-    'Databases' => [
-        ['name' => 'MySQL',              'level' => 90, 'icon' => '🌊'],
-        ['name' => 'PostgreSQL',         'level' => 82, 'icon' => '🐬'],
-        ['name' => 'Database Design',    'level' => 88, 'icon' => '📐'],
-        ['name' => 'Query Optimisation', 'level' => 85, 'icon' => '🚀'],
-        ['name' => 'Redis / Caching',    'level' => 80, 'icon' => '🧊'],
-    ],
-    'DevOps & Tools' => [
-        ['name' => 'AWS',        'level' => 78, 'icon' => '☁️'],
-        ['name' => 'Docker',     'level' => 83, 'icon' => '🐳'],
-        ['name' => 'Linux',      'level' => 88, 'icon' => '🐧'],
-        ['name' => 'Nginx',      'level' => 80, 'icon' => '🌐'],
-        ['name' => 'Kubernetes', 'level' => 70, 'icon' => '☸️'],
-        ['name' => 'Git/GitHub', 'level' => 90, 'icon' => '🌿'],
-        ['name' => 'Postman',    'level' => 92, 'icon' => '📮'],
-    ],
-];
+$formEnabled = $profile['web3forms_key'] !== '' && $profile['web3forms_key'] !== 'YOUR_WEB3FORMS_ACCESS_KEY';
 
 $experience = [
     [
         'company' => 'Incoweb Technologies',
         'role'    => 'Backend Developer',
         'period'  => 'Mar 2026 — Present',
-        'status'  => 'current',
         'points'  => [
-            'Built backend services and REST APIs using Laravel, PHP, MySQL and Redis for business automation applications.',
+            'Build backend services and REST APIs with Laravel, PHP, MySQL and Redis for business automation applications.',
             'Integrated WhatsApp Business APIs and third-party services for automated messaging, lead management, notifications and workflows.',
-            'Designed database schemas and optimised MySQL queries and Eloquent relationships for performance and data reliability.',
-            'Implemented authentication, authorization, validation and role-based access control using reusable Laravel services and middleware.',
-            'Debugged and resolved API, database and third-party integration issues from development through deployment.',
+            'Design database schemas and optimise MySQL queries and Eloquent relationships for performance and data reliability.',
+            'Implement authentication, authorisation, validation and role-based access control with reusable Laravel services and middleware.',
+            'Debug and resolve API, database and integration issues from development through deployment.',
         ],
     ],
     [
         'company' => 'Wipro Limited',
         'role'    => 'Associate',
         'period'  => 'Dec 2024 — Mar 2026',
-        'status'  => 'past',
         'points'  => [
+            'Processed and validated 1,000+ complex datasets for an autonomous-vehicle project before AI model ingestion.',
             'Analysed mapping and data-processing systems, identifying and reporting 250+ system anomalies and data discrepancies.',
-            'Processed and validated 1,000+ complex datasets for an autonomous vehicle project before AI model ingestion.',
-            'Used Deepen.AI and internal tools to analyse object-recognition outputs and identify data-quality issues.',
-            'Collaborated with engineering teams to investigate issues, validate fixes, and improve data quality and reliability.',
+            'Used Deepen.AI and internal tools to analyse object-recognition outputs and surface data-quality issues.',
+            'Worked with engineering teams to investigate issues, validate fixes and improve data reliability.',
         ],
     ],
 ];
 
 $projects = [
     [
+        'title' => 'Tracebase',
+        'sub'   => 'Self-hosted AI for code, logs and backups',
+        'desc'  => 'A private, self-hosted assistant that runs on a NAS or any Docker host. It indexes every repository for semantic code search and Q&A with file:line citations, and can copy a feature from an old project into a new one — adapting names, imports and dependencies and showing the diff first. Its Log Detective groups production errors, maps stack traces to the failing line, finds the commit that introduced it with git blame and suggests a fix. Secrets and personal data are redacted before storage; team mode adds per-repo access tokens and an audit log. Exposed to Claude Code and other agents over MCP.',
+        'tags'  => ['Python', 'FastAPI', 'tree-sitter', 'Ollama', 'MCP', 'React', 'Docker'],
+        'link'  => 'https://github.com/anshuraj669/tracebase',
+    ],
+    [
         'title' => 'Sentinel',
-        'sub'   => 'Website Security Audit Platform',
-        'desc'  => 'Full-stack security auditing platform built with Laravel, Livewire, MySQL, FastAPI and Python. Laravel talks to a stateless Python scanning engine over REST for automated checks covering TLS, security headers, exposed files, cookies, CORS, malware and information leakage — with isolated checks, validation and secure handling of sensitive evidence. Ships with a CLI for source-code analysis, dependency scanning, secret detection and Git-history audits with report sync.',
-        'tags'  => ['Laravel', 'Livewire', 'FastAPI', 'Python', 'MySQL', 'Security'],
+        'sub'   => 'Website security audit platform',
+        'desc'  => 'A Laravel + Livewire application backed by a stateless Python scanning engine over REST. Automated checks cover TLS, security headers, exposed files, cookies, CORS, malware and information leakage, with isolated checks and careful handling of sensitive evidence. A companion CLI adds source-code analysis, dependency scanning, secret detection and Git-history audits that sync back to the dashboard.',
+        'tags'  => ['Laravel', 'Livewire', 'FastAPI', 'Python', 'MySQL'],
         'link'  => 'https://github.com/anshuraj669/sentinel',
-        'icon'  => '🛡️',
     ],
     [
         'title' => 'Notification Engine',
-        'sub'   => 'Event-Driven Multi-Channel Notifications',
-        'desc'  => 'Event-driven notification engine for financial events, built with FastAPI, Kafka, PostgreSQL and Redis. Producers publish facts like order.executed or margin.call, and the engine routes them by priority across SMS, Email, Push, WhatsApp and in-app, in the user\'s language. A compliance chain enforces Indian telecom rules (DLT, DND, quiet hours, consent, frequency caps), and provider failover, circuit breakers, retries and a dead-letter queue sit behind every send. Every outcome is written to a delivery ledger, which also feeds a Streamlit operator dashboard and Prometheus alerting.',
-        'tags'  => ['FastAPI', 'Kafka', 'PostgreSQL', 'Redis', 'Python', 'Docker'],
+        'sub'   => 'Event-driven, multi-channel notifications',
+        'desc'  => 'Routes financial events (order.executed, margin.call, …) by priority across SMS, email, push, WhatsApp and in-app, in the user’s language. A compliance chain enforces Indian telecom rules (DLT, DND, quiet hours, consent, frequency caps). Provider failover, circuit breakers, retries and a dead-letter queue sit behind every send, and every outcome is written to a delivery ledger that feeds an operator dashboard and Prometheus alerts.',
+        'tags'  => ['FastAPI', 'Kafka', 'PostgreSQL', 'Redis', 'Prometheus', 'Docker'],
         'link'  => 'https://github.com/anshuraj669/NotificationEngine',
-        'icon'  => '🔔',
     ],
     [
         'title' => 'Klonr',
-        'sub'   => 'AI Voice Cloning Studio',
-        'desc'  => 'AI voice cloning and text-to-speech platform powered by the Spark-TTS-0.5B model (PyTorch). Upload a short sample (MP3, WAV, M4A, OGG or FLAC) to clone any voice, then generate natural-sounding speech in it, with real-time audio streaming for low-latency playback and batch synthesis from CSV files. The FastAPI backend uses SQLAlchemy and JWT + Google OAuth 2.0 auth, and exposes a Swagger-documented REST API. The React 19 + Tailwind frontend has a dashboard with live usage stats, an activity feed and weekly usage charts. Dockerised, with GPU support.',
-        'tags'  => ['FastAPI', 'React', 'Spark-TTS', 'PyTorch', 'OAuth', 'Docker'],
+        'sub'   => 'Voice cloning and text-to-speech platform',
+        'desc'  => 'Clone a voice from a short audio sample and generate speech with the Spark-TTS model, with real-time streaming playback and batch synthesis from CSV. FastAPI backend with SQLAlchemy, JWT and Google OAuth 2.0, and a documented REST API; React 19 dashboard with usage stats. Dockerised with GPU support.',
+        'tags'  => ['FastAPI', 'PyTorch', 'React', 'OAuth 2.0', 'Docker'],
         'link'  => 'https://github.com/anshuraj669/klonr',
-        'icon'  => '🎧',
     ],
-    [
-        'title' => 'Visual Alertness Monitoring',
-        'sub'   => 'Driver Drowsiness Detection',
-        'desc'  => 'Flask-based computer-vision app for real-time driver drowsiness detection using Python, OpenCV, Dlib and Mediapipe — analysing facial landmarks and eye movement from a webcam feed to flag signs of fatigue with live alertness feedback.',
-        'tags'  => ['Flask', 'OpenCV', 'Dlib', 'Mediapipe', 'Python'],
-        'link'  => 'https://github.com/anshuraj669/final_year',
-        'icon'  => '👁️',
-    ],
-    [
-        'title' => 'Sakshi',
-        'sub'   => 'Linux Voice Assistant',
-        'desc'  => 'Wake-word "Hey Sakshi" assistant with speaker verification, NLU, CustomTkinter GUI, and full voice control of dev/system commands.',
-        'tags'  => ['Python', 'NLU', 'Speech', 'Linux'],
-        'link'  => 'https://github.com/anshuraj669/sakshi',
-        'icon'  => '🎤',
-    ],
-    [
-        'title' => 'Dish Deals',
-        'sub'   => 'Restaurant Deals Platform',
-        'desc'  => 'Backend service aggregating food deals with clean APIs and structured data flow.',
-        'tags'  => ['Python', 'REST API'],
-        'link'  => 'https://github.com/anshuraj669/dish-deals',
-        'icon'  => '🍽️',
-    ],
+];
+
+$skills = [
+    'Languages'      => ['Python', 'PHP', 'SQL', 'JavaScript', 'HTML / CSS'],
+    'Backend'        => ['Laravel', 'FastAPI', 'REST API design', 'Auth & RBAC', 'Kafka', 'Third-party integrations'],
+    'Data'           => ['MySQL', 'PostgreSQL', 'Redis', 'Schema design', 'Query optimisation'],
+    'DevOps & Tools' => ['Docker', 'Linux', 'Nginx', 'AWS', 'Git', 'Postman'],
 ];
 
 $education = [
-    ['year' => '2020 — 2024', 'title' => 'B.E. in Information Technology', 'place' => 'PRMITR Badnera', 'score' => '8.50 CGPA'],
-    ['year' => '2019',        'title' => 'Higher Secondary (12th)',         'place' => 'CBSE',            'score' => '70.6%'],
-    ['year' => '2017',        'title' => 'Secondary (10th)',                'place' => 'CBSE',            'score' => '9.8 CGPA'],
+    ['year' => '2020 — 2024', 'title' => 'B.E. in Information Technology', 'place' => 'PRMITR, Badnera', 'score' => '8.50 CGPA'],
 ];
 
 $certificates = [
-    ['name' => 'PHP and MySQL',               'date' => 'Oct 2023', 'link' => 'https://drive.google.com/file/d/1fAY9L-_ERx-MMrGmvuCNoLrp3ICa8Jum/view?usp=sharing'],
-    ['name' => 'Introduction to Cybersecurity','date' => 'May 2023', 'link' => 'https://drive.google.com/file/d/1hknmXqeo78yTqTwvk3dfsorBKK5WDonq/view?usp=sharing'],
-    ['name' => 'CyberOps Associate',          'date' => 'Jul 2023', 'link' => 'https://drive.google.com/file/d/1xZ1XhIuEM_aFnPWHMSG2JysEODeWVX5H/view?usp=drive_link'],
-    ['name' => 'Introduction to Packet Tracer','date' => 'May 2023', 'link' => 'https://drive.google.com/file/d/1I6axBtldjczdyRufgvMVVqIpsbxLr8kL/view?usp=drive_link'],
+    ['name' => 'PHP and MySQL',                 'date' => 'Oct 2023', 'link' => 'https://drive.google.com/file/d/1fAY9L-_ERx-MMrGmvuCNoLrp3ICa8Jum/view?usp=sharing'],
+    ['name' => 'CyberOps Associate (Cisco)',    'date' => 'Jul 2023', 'link' => 'https://drive.google.com/file/d/1xZ1XhIuEM_aFnPWHMSG2JysEODeWVX5H/view?usp=drive_link'],
+    ['name' => 'Introduction to Cybersecurity', 'date' => 'May 2023', 'link' => 'https://drive.google.com/file/d/1hknmXqeo78yTqTwvk3dfsorBKK5WDonq/view?usp=sharing'],
 ];
 
 $achievements = [
     [
         'title' => 'AGBA National Talent Hunt Scholarship',
         'desc'  => 'Supported by the Ministry of Electronics and Information Technology, Government of India.',
-        'icon'  => '🏆',
         'link'  => 'https://drive.google.com/file/d/1EhHKA8ibupBKzNSrw13IEpf8WqkYZSMA/view?usp=drivesdk',
     ],
-    [
-        'title' => '1,000+ Datasets Validated',
-        'desc'  => 'Processed and validated complex datasets for an autonomous vehicle project before AI model ingestion at Wipro.',
-        'icon'  => '📈',
-    ],
-    [
-        'title' => '250+ System Anomalies Reported',
-        'desc'  => 'Surfaced and validated data discrepancies across mapping and data-processing systems.',
-        'icon'  => '🔍',
-    ],
 ];
 
-// Section chat-prompts — each section opens with a user → AI message exchange
-$sectionMeta = [
-    'about'      => ['n' => '01', 'ask' => 'Who is Anshu Raj?',                'reply' => 'Glad you asked. Here\'s the short version 👇'],
-    'skills'     => ['n' => '02', 'ask' => 'What can he build?',               'reply' => 'Pulling up his full toolkit — languages, backend & APIs, databases, and DevOps ⚡'],
-    'experience' => ['n' => '03', 'ask' => 'Where has he worked?',             'reply' => 'Here\'s his career trail so far 🛤️'],
-    'projects'   => ['n' => '04', 'ask' => 'Show me his shipped work.',        'reply' => 'Sharing 6 live projects from his GitHub 📎'],
-    'education'  => ['n' => '05', 'ask' => 'What\'s his academic background?', 'reply' => 'Walking through his learning timeline 🎓'],
-    'extras'     => ['n' => '06', 'ask' => 'Any certs or wins?',               'reply' => 'A few worth highlighting 🏆'],
-    'contact'    => ['n' => '07', 'ask' => 'How do I reach him?',              'reply' => 'Drop a message below — I\'ll forward it to Anshu right away 📬'],
-];
+function e(string $s): string { return htmlspecialchars($s, ENT_QUOTES, 'UTF-8'); }
 
-/** Render a chat-style section header (user prompt → AI reply). */
-function chat_head(array $meta): string {
-    $n     = htmlspecialchars($meta['n']);
-    $ask   = htmlspecialchars($meta['ask']);
-    $reply = $meta['reply']; // contains emoji & escaped strings already
-    return <<<HTML
-<div class="chat-head reveal">
-    <div class="chat-msg user">
-        <span class="msg-meta"><span class="msg-tag">you</span> · #{$n}</span>
-        <span class="msg-bubble">{$ask}</span>
-    </div>
-    <div class="chat-msg ai">
-        <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · typing complete</span>
-        <span class="msg-bubble">{$reply}</span>
-    </div>
-</div>
-HTML;
-}
-
-// Contact form feedback (set after POST in contact.php redirect)
-$flash = $_GET['sent'] ?? null;
+$arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?= htmlspecialchars($profile['name']) ?> — <?= htmlspecialchars($profile['company_role']) ?></title>
-    <meta name="description" content="<?= htmlspecialchars($profile['tagline']) ?>" />
+    <title><?= e($profile['name']) ?> — <?= e($profile['title']) ?></title>
+    <meta name="description" content="<?= e($profile['tagline']) ?>" />
     <link rel="icon" type="image/png" href="assets/images/Logo.png" />
     <link rel="apple-touch-icon" href="assets/images/Logo.png" />
-    <link rel="shortcut icon" href="assets/images/Logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bungee+Shade&family=Fredoka:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- Custom cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-dot" id="cursorDot"></div>
-
-<!-- Loading screen — AI agent booting -->
-<div class="loader" id="loader">
-    <div class="loader-boot">
-        <div class="boot-line"><span class="boot-prefix">$</span> connecting to <span class="boot-host">Anshu Raj's personal AI agent</span> ...</div>
-        <div class="boot-line"><span class="boot-prefix">$</span> handshake <span class="boot-ok">OK</span></div>
-        <div class="boot-line"><span class="boot-prefix">$</span> loading personality matrix <span class="boot-ok">OK</span></div>
-        <div class="boot-line"><span class="boot-prefix">$</span> ready <span class="boot-blink">_</span></div>
+<header class="nav">
+    <div class="container nav-inner">
+        <a href="#top" class="nav-brand"><?= e($profile['name']) ?></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+            <a href="<?= e($profile['resume']) ?>" target="_blank" rel="noopener" class="btn btn-small">Résumé</a>
+        </nav>
     </div>
-    <div class="loader-name">
-        <span>A</span><span>N</span><span>S</span><span>H</span><span>U</span>
-        <span class="space">&nbsp;</span>
-        <span>R</span><span>A</span><span>J</span>
-    </div>
-    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
+</header>
 
-<!-- Background grid + orbs -->
-<div class="bg-grid"></div>
-<div class="bg-orb orb-1"></div>
-<div class="bg-orb orb-2"></div>
-<div class="bg-orb orb-3"></div>
+<main id="top">
 
-<!-- Floating resume pill (replaces navbar) -->
-<a href="<?= htmlspecialchars($profile['resume']) ?>" target="_blank" class="float-resume magnetic" aria-label="Open résumé">
-    <span class="cta-dot"></span>
-    <span>Resume</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-</a>
-
-<!-- ============ HERO — CHAT WINDOW ============ -->
-<section id="home" class="hero hero-chat-section">
-    <div class="chat-window">
-        <div class="chat-window-head">
-            <div class="chat-avatar has-photo">
-                <img src="assets/images/profile.jpg" alt="<?= htmlspecialchars($profile['name']) ?>" class="avatar-img"
-                     onerror="this.onerror=null;this.src='assets/images/Logo.png';this.classList.add('logo-fallback');" />
-                <span class="avatar-status"></span>
+<!-- ============ HERO ============ -->
+<section class="hero">
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <p class="eyebrow"><?= e($profile['title']) ?> · <?= e($profile['company']) ?></p>
+            <h1><?= e($profile['name']) ?></h1>
+            <p class="lead"><?= e($profile['tagline']) ?></p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn">View projects</a>
+                <a href="<?= e($profile['resume']) ?>" target="_blank" rel="noopener" class="btn btn-outline">Download résumé</a>
             </div>
-            <div class="chat-id">
-                <div class="chat-name">Anshu Raj's personal AI agent <span class="verified" title="Verified portfolio agent">✓</span></div>
-                <div class="chat-sub"><span class="dot-blink"></span> online · responds instantly · powered by Anshu Raj</div>
-            </div>
-            <div class="chat-tabs">
-                <span class="chat-action" title="Encrypted">🔒</span>
-                <span class="chat-action" title="Mute">🔔</span>
-                <span class="chat-action" title="Menu">⋯</span>
-            </div>
+            <ul class="hero-links">
+                <li><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="mailto:<?= e($profile['email']) ?>"><?= e($profile['email']) ?></a></li>
+                <li><?= e($profile['location']) ?></li>
+            </ul>
         </div>
-
-        <div class="chat-body" id="chatBody">
-            <div class="chat-day">— today —</div>
-
-            <div class="chat-msg ai">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · just now</span>
-                <span class="msg-bubble">Hey there 👋 I'm <strong>Anshu's AI</strong>. I can answer anything about him — his stack, projects, experience, or how to hire him.</span>
-            </div>
-
-            <div class="chat-msg ai">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · just now</span>
-                <span class="msg-bubble big-bubble">
-                    <span class="hero-name-block">
-                        <span class="hero-name-fill" data-text="<?= htmlspecialchars($profile['first']) ?>"><?= htmlspecialchars($profile['first']) ?></span>
-                        <span class="hero-name-fill alt" data-text="<?= htmlspecialchars($profile['last']) ?>"><?= htmlspecialchars($profile['last']) ?></span>
-                    </span>
-                    <span class="hero-role">
-                        <span class="bracket">&lt;</span>
-                        <span id="typewriter"></span><span class="caret">|</span>
-                        <span class="bracket">/&gt;</span>
-                    </span>
-                    <span class="hero-tag-inline"><?= htmlspecialchars($profile['tagline']) ?></span>
-                </span>
-            </div>
-
-            <div class="chat-msg ai">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · just now</span>
-                <span class="msg-bubble">📍 <strong><?= htmlspecialchars($profile['location']) ?></strong> &nbsp;·&nbsp; 💼 <strong><?= htmlspecialchars($profile['company_role']) ?></strong> @ <?= htmlspecialchars($profile['company']) ?></span>
-            </div>
-
-            <div class="chat-msg ai chips-msg">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · suggestions</span>
-                <span class="msg-bubble chips-bubble">
-                    <span class="chip-label">Try asking:</span>
-                    <a href="#projects"   class="chat-chip">💼 Show projects</a>
-                    <a href="#skills"     class="chat-chip">⚡ List his skills</a>
-                    <a href="#experience" class="chat-chip">📍 Where has he worked?</a>
-                    <a href="#contact"    class="chat-chip primary">📞 Hire him</a>
-                </span>
-            </div>
-
-            <div class="chat-msg user" id="userPrompt">
-                <span class="msg-meta">you · just now <span class="ticks">✓✓</span></span>
-                <span class="msg-bubble">Tell me everything 👀</span>
-            </div>
-
-            <div class="chat-msg ai typing-msg" id="aiTyping">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · typing</span>
-                <span class="msg-bubble typing">
-                    <span class="t-dot"></span><span class="t-dot"></span><span class="t-dot"></span>
-                </span>
-            </div>
-
-            <div class="chat-msg ai socials-msg" id="socialsReveal">
-                <span class="msg-meta"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · attachments</span>
-                <span class="msg-bubble socials-bubble">
-                    <a href="<?= htmlspecialchars($profile['github']) ?>" target="_blank" class="social-pill">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
-                        GitHub
-                    </a>
-                    <a href="<?= htmlspecialchars($profile['linkedin']) ?>" target="_blank" class="social-pill">💼 LinkedIn</a>
-                    <a href="mailto:<?= htmlspecialchars($profile['email']) ?>" class="social-pill">✉️ Email</a>
-                    <a href="tel:<?= htmlspecialchars($profile['phone']) ?>" class="social-pill">📞 Call</a>
-                </span>
-            </div>
-        </div>
-
-        <form class="chat-composer hero-composer" onsubmit="event.preventDefault(); document.querySelector('#projects').scrollIntoView({behavior:'smooth'});">
-            <button type="button" class="composer-icon" aria-label="Attach">＋</button>
-            <input type="text" placeholder="Ask Anshu Raj's personal AI agent anything..." aria-label="Message" id="heroComposerInput" />
-            <button type="submit" class="composer-send" aria-label="Send">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-            </button>
-        </form>
+        <img src="assets/images/profile.jpg" alt="Photo of <?= e($profile['name']) ?>" class="hero-photo" width="240" height="240" />
     </div>
-
-    <a href="#about" class="hero-scroll" aria-label="scroll down">
-        <span>SCROLL</span>
-        <div class="scroll-line"></div>
-    </a>
 </section>
 
 <!-- ============ ABOUT ============ -->
 <section id="about" class="section">
-    <div class="container">
-        <?= chat_head($sectionMeta['about']) ?>
-        <div class="about-grid">
-            <div class="about-text">
-                <p class="reveal">I'm a <strong>Software Engineer</strong> building backend systems, REST APIs and data-driven applications with <strong>Python, Laravel, FastAPI and MySQL</strong> — currently at <a href="#" class="link-neon"><?= htmlspecialchars($profile['company']) ?></a>.</p>
-                <p class="reveal">At <strong>Wipro</strong> I analysed large datasets, identified system issues, and worked with engineering teams to improve data quality and reliability. Since then I've built projects that connect Laravel applications to Python services — including real-time analysis and security-focused systems.</p>
-                <p class="reveal">I enjoy understanding how systems work, solving practical technical problems, and turning requirements into reliable solutions. I'm especially drawn to roles where I work closely with teams and customers and take solutions from <strong>development through to deployment</strong>.</p>
-                <div class="about-tags reveal">
-                    <span class="chip">Laravel</span>
-                    <span class="chip">Python</span>
-                    <span class="chip">FastAPI</span>
-                    <span class="chip">MySQL</span>
-                    <span class="chip">REST APIs</span>
-                    <span class="chip">Docker</span>
-                </div>
-            </div>
-            <div class="about-stats">
-                <?php foreach ($stats as $s): ?>
-                <div class="stat-card reveal">
-                    <div class="stat-num" data-count="<?= (int)$s['num'] ?>" data-suffix="<?= htmlspecialchars($s['suffix']) ?>">0</div>
-                    <div class="stat-label"><?= htmlspecialchars($s['label']) ?></div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section id="skills" class="section">
-    <div class="container">
-        <?= chat_head($sectionMeta['skills']) ?>
-        <div class="skills-grid">
-            <?php foreach ($skills as $category => $items): ?>
-            <div class="skill-cat reveal tilt">
-                <h3 class="skill-cat-title"><?= htmlspecialchars($category) ?></h3>
-                <div class="skill-list">
-                    <?php foreach ($items as $skill): ?>
-                    <div class="skill-row">
-                        <div class="skill-info">
-                            <span class="skill-icon"><?= $skill['icon'] ?></span>
-                            <span class="skill-name"><?= htmlspecialchars($skill['name']) ?></span>
-                            <span class="skill-pct"><?= (int)$skill['level'] ?>%</span>
-                        </div>
-                        <div class="skill-bar"><div class="skill-bar-fill" data-level="<?= (int)$skill['level'] ?>"></div></div>
-                    </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
+    <div class="container narrow">
+        <h2 class="section-title">About</h2>
+        <p>I'm a backend developer at <strong><?= e($profile['company']) ?></strong>, where I build Laravel services, REST APIs and integrations for business automation. Before that I spent over a year at <strong>Wipro</strong> validating large datasets and tracking down data-quality issues for an autonomous-vehicle program.</p>
+        <p>Outside work I build systems end to end — event-driven pipelines, security tooling, and self-hosted developer tools — usually in Python and FastAPI alongside Laravel. I care about clear data models, predictable failure handling and software that's easy to operate.</p>
     </div>
 </section>
 
 <!-- ============ EXPERIENCE ============ -->
 <section id="experience" class="section">
-    <div class="container">
-        <?= chat_head($sectionMeta['experience']) ?>
-        <div class="timeline">
+    <div class="container narrow">
+        <h2 class="section-title">Experience</h2>
+        <div class="exp-list">
             <?php foreach ($experience as $exp): ?>
-            <div class="timeline-item reveal <?= $exp['status'] === 'current' ? 'current' : '' ?>">
-                <div class="timeline-marker">
-                    <div class="marker-dot"></div>
-                    <div class="marker-pulse"></div>
-                </div>
-                <div class="timeline-card tilt">
-                    <div class="timeline-head">
-                        <div>
-                            <h3 class="timeline-role"><?= htmlspecialchars($exp['role']) ?></h3>
-                            <p class="timeline-company"><?= htmlspecialchars($exp['company']) ?></p>
-                        </div>
-                        <span class="timeline-period <?= $exp['status'] === 'current' ? 'now' : '' ?>"><?= htmlspecialchars($exp['period']) ?></span>
+            <article class="exp">
+                <div class="exp-head">
+                    <div>
+                        <h3><?= e($exp['role']) ?></h3>
+                        <p class="exp-company"><?= e($exp['company']) ?></p>
                     </div>
-                    <ul class="timeline-points">
-                        <?php foreach ($exp['points'] as $p): ?>
-                            <li><?= htmlspecialchars($p) ?></li>
-                        <?php endforeach; ?>
-                    </ul>
+                    <span class="exp-period"><?= e($exp['period']) ?></span>
                 </div>
-            </div>
+                <ul>
+                    <?php foreach ($exp['points'] as $p): ?>
+                    <li><?= e($p) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </article>
             <?php endforeach; ?>
         </div>
     </div>
@@ -443,236 +198,129 @@ $flash = $_GET['sent'] ?? null;
 <!-- ============ PROJECTS ============ -->
 <section id="projects" class="section">
     <div class="container">
-        <?= chat_head($sectionMeta['projects']) ?>
-        <div class="projects-grid">
-            <?php foreach ($projects as $i => $p): ?>
-            <a href="<?= htmlspecialchars($p['link']) ?>" target="_blank" class="project-card tilt reveal" style="--i: <?= $i ?>">
-                <div class="project-glow"></div>
-                <div class="project-icon"><?= $p['icon'] ?></div>
-                <div class="project-body">
-                    <h3 class="project-title"><?= htmlspecialchars($p['title']) ?></h3>
-                    <p class="project-sub"><?= htmlspecialchars($p['sub']) ?></p>
-                    <p class="project-desc"><?= htmlspecialchars($p['desc']) ?></p>
-                    <div class="project-tags">
-                        <?php foreach ($p['tags'] as $t): ?>
-                            <span class="project-tag"><?= htmlspecialchars($t) ?></span>
+        <h2 class="section-title">Selected projects</h2>
+        <div class="projects">
+            <?php foreach ($projects as $p): ?>
+            <article class="project">
+                <div class="project-head">
+                    <h3><a href="<?= e($p['link']) ?>" target="_blank" rel="noopener"><?= e($p['title']) ?> <?= $arrow ?></a></h3>
+                    <p class="project-sub"><?= e($p['sub']) ?></p>
+                </div>
+                <p class="project-desc"><?= e($p['desc']) ?></p>
+                <ul class="tags">
+                    <?php foreach ($p['tags'] as $t): ?>
+                    <li><?= e($t) ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </article>
+            <?php endforeach; ?>
+        </div>
+        <p class="more"><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">More on GitHub <?= $arrow ?></a></p>
+    </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="section">
+    <div class="container narrow">
+        <h2 class="section-title">Skills</h2>
+        <dl class="skills">
+            <?php foreach ($skills as $category => $items): ?>
+            <div class="skill-row">
+                <dt><?= e($category) ?></dt>
+                <dd>
+                    <ul class="tags">
+                        <?php foreach ($items as $s): ?>
+                        <li><?= e($s) ?></li>
                         <?php endforeach; ?>
+                    </ul>
+                </dd>
+            </div>
+            <?php endforeach; ?>
+        </dl>
+    </div>
+</section>
+
+<!-- ============ EDUCATION & CERTIFICATIONS ============ -->
+<section id="education" class="section">
+    <div class="container narrow">
+        <h2 class="section-title">Education &amp; certifications</h2>
+        <div class="two-col">
+            <div>
+                <h3 class="sub-title">Education</h3>
+                <?php foreach ($education as $ed): ?>
+                <div class="line-item">
+                    <div>
+                        <div class="li-title"><?= e($ed['title']) ?></div>
+                        <div class="li-meta"><?= e($ed['place']) ?> · <?= e($ed['score']) ?></div>
+                    </div>
+                    <span class="li-date"><?= e($ed['year']) ?></span>
+                </div>
+                <?php endforeach; ?>
+
+                <h3 class="sub-title">Recognition</h3>
+                <?php foreach ($achievements as $a): ?>
+                <div class="line-item">
+                    <div>
+                        <div class="li-title">
+                            <?php if (isset($a['link'])): ?><a href="<?= e($a['link']) ?>" target="_blank" rel="noopener"><?= e($a['title']) ?></a><?php else: ?><?= e($a['title']) ?><?php endif; ?>
+                        </div>
+                        <div class="li-meta"><?= e($a['desc']) ?></div>
                     </div>
                 </div>
-                <div class="project-arrow">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M7 7h10v10"/></svg>
-                </div>
-            </a>
-            <?php endforeach; ?>
-        </div>
-        <div class="projects-cta reveal">
-            <a href="<?= htmlspecialchars($profile['github']) ?>" target="_blank" class="btn btn-ghost magnetic">
-                <span>See all on GitHub</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- ============ EDUCATION ============ -->
-<section id="education" class="section">
-    <div class="container">
-        <?= chat_head($sectionMeta['education']) ?>
-        <div class="edu-grid">
-            <?php foreach ($education as $e): ?>
-            <div class="edu-card reveal tilt">
-                <div class="edu-year"><?= htmlspecialchars($e['year']) ?></div>
-                <h3 class="edu-title"><?= htmlspecialchars($e['title']) ?></h3>
-                <p class="edu-place"><?= htmlspecialchars($e['place']) ?></p>
-                <div class="edu-score"><?= htmlspecialchars($e['score']) ?></div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<!-- ============ CERTIFICATES + ACHIEVEMENTS ============ -->
-<section id="extras" class="section">
-    <div class="container">
-        <?= chat_head($sectionMeta['extras']) ?>
-        <div class="extras-grid">
-            <div class="extras-block reveal">
-                <div class="extras-label"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · certifications.json</div>
-                <div class="cert-list">
-                    <?php foreach ($certificates as $c): ?>
-                    <?php $tag = isset($c['link']) ? 'a' : 'div'; ?>
-                    <<?= $tag ?> class="cert-item"<?= isset($c['link']) ? ' href="' . htmlspecialchars($c['link']) . '" target="_blank" rel="noopener"' : '' ?>>
-                        <div class="cert-badge">✓</div>
-                        <div>
-                            <div class="cert-name"><?= htmlspecialchars($c['name']) ?></div>
-                            <div class="cert-date"><?= htmlspecialchars($c['date']) ?></div>
-                        </div>
-                    </<?= $tag ?>>
-                    <?php endforeach; ?>
+            <div>
+                <h3 class="sub-title">Certifications</h3>
+                <?php foreach ($certificates as $c): ?>
+                <div class="line-item">
+                    <div class="li-title"><a href="<?= e($c['link']) ?>" target="_blank" rel="noopener"><?= e($c['name']) ?></a></div>
+                    <span class="li-date"><?= e($c['date']) ?></span>
                 </div>
-            </div>
-            <div class="extras-block reveal">
-                <div class="extras-label"><span class="msg-tag ai-tag">Anshu Raj's personal AI agent</span> · achievements.json</div>
-                <div class="ach-list">
-                    <?php foreach ($achievements as $a): ?>
-                    <?php $tag = isset($a['link']) ? 'a' : 'div'; ?>
-                    <<?= $tag ?> class="ach-item tilt"<?= isset($a['link']) ? ' href="' . htmlspecialchars($a['link']) . '" target="_blank" rel="noopener"' : '' ?>>
-                        <div class="ach-icon"><?= $a['icon'] ?></div>
-                        <div>
-                            <div class="ach-title"><?= htmlspecialchars($a['title']) ?></div>
-                            <div class="ach-desc"><?= htmlspecialchars($a['desc']) ?></div>
-                        </div>
-                    </<?= $tag ?>>
-                    <?php endforeach; ?>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <?= chat_head($sectionMeta['contact']) ?>
-
-        <?php if ($flash === '1'): ?>
-            <div class="flash success reveal">✓ Message sent. I'll get back to you soon.</div>
-        <?php elseif ($flash === '0'): ?>
-            <div class="flash error reveal">✕ Something went wrong. Please try again or email me directly.</div>
-        <?php endif; ?>
-
-        <div class="contact-grid">
-            <div class="contact-info reveal">
-                <a href="mailto:<?= htmlspecialchars($profile['email']) ?>" class="contact-item">
-                    <div class="ci-icon">✉️</div>
-                    <div>
-                        <div class="ci-label">Email</div>
-                        <div class="ci-value"><?= htmlspecialchars($profile['email']) ?></div>
-                    </div>
-                </a>
-                <a href="tel:<?= htmlspecialchars($profile['phone']) ?>" class="contact-item">
-                    <div class="ci-icon">📞</div>
-                    <div>
-                        <div class="ci-label">Phone</div>
-                        <div class="ci-value"><?= htmlspecialchars($profile['phone']) ?></div>
-                    </div>
-                </a>
-                <div class="contact-item">
-                    <div class="ci-icon">📍</div>
-                    <div>
-                        <div class="ci-label">Location</div>
-                        <div class="ci-value"><?= htmlspecialchars($profile['location']) ?></div>
-                    </div>
-                </div>
-                <a href="<?= htmlspecialchars($profile['github']) ?>" target="_blank" class="contact-item">
-                    <div class="ci-icon">⌨️</div>
-                    <div>
-                        <div class="ci-label">GitHub</div>
-                        <div class="ci-value">@anshuraj669</div>
-                    </div>
-                </a>
-            </div>
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form chat-form reveal" id="contactForm">
-                <!-- Web3Forms: get a free access key at https://web3forms.com (enter your email, key is emailed to you) and paste it below -->
-                <input type="hidden" name="access_key" value="<?= htmlspecialchars($profile['web3forms_key']) ?>" />
-                <input type="hidden" name="from_name" value="<?= htmlspecialchars($profile['name']) ?> Portfolio" />
-                <!-- Honeypot spam filter (leave empty) -->
-                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
-                <div class="chat-form-head">
-                    <div class="chat-avatar small has-photo">
-                        <img src="assets/images/profile.jpg" alt="<?= htmlspecialchars($profile['name']) ?>" class="avatar-img"
-                             onerror="this.onerror=null;this.src='assets/images/Logo.png';this.classList.add('logo-fallback');" />
-                        <span class="avatar-status"></span>
-                    </div>
-                    <div>
-                        <div class="chat-name">Anshu Raj's personal AI agent <span class="verified">✓</span></div>
-                        <div class="chat-sub"><span class="dot-blink"></span> ready to forward your message</div>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-field">
-                        <input type="text" name="name" id="f_name" required autocomplete="name" />
-                        <label for="f_name">Your Name</label>
-                        <div class="field-line"></div>
-                    </div>
-                    <div class="form-field">
-                        <input type="email" name="email" id="f_email" required autocomplete="email" />
-                        <label for="f_email">Email</label>
-                        <div class="field-line"></div>
-                    </div>
-                </div>
-                <div class="form-field">
-                    <input type="text" name="subject" id="f_subject" required />
-                    <label for="f_subject">What's this about?</label>
-                    <div class="field-line"></div>
-                </div>
-                <div class="form-field">
-                    <textarea name="message" id="f_message" rows="5" required></textarea>
-                    <label for="f_message">Type your message to Anshu Raj's personal AI agent...</label>
-                    <div class="field-line"></div>
-                </div>
-                <button type="submit" class="btn btn-primary magnetic full">
-                    <span>Send to Anshu Raj's personal AI agent</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-                </button>
-                <div class="chat-form-hint">🔒 End-to-end forwarded · usually replies within a day</div>
+<section id="contact" class="section">
+    <div class="container narrow">
+        <h2 class="section-title">Contact</h2>
+        <p>I'm open to backend and platform engineering roles. The quickest way to reach me is email.</p>
+        <div class="contact-grid<?= $formEnabled ? '' : ' single' ?>">
+            <ul class="contact-list">
+                <li><span>Email</span><a href="mailto:<?= e($profile['email']) ?>"><?= e($profile['email']) ?></a></li>
+                <li><span>Phone</span><a href="tel:<?= e(str_replace(' ', '', $profile['phone'])) ?>"><?= e($profile['phone']) ?></a></li>
+                <li><span>GitHub</span><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">@<?= e($profile['github_user']) ?></a></li>
+                <li><span>LinkedIn</span><a href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener">anshu~raj</a></li>
+                <li><span>Location</span><?= e($profile['location']) ?></li>
+            </ul>
+            <?php if ($formEnabled): ?>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contactForm">
+                <input type="hidden" name="access_key" value="<?= e($profile['web3forms_key']) ?>" />
+                <input type="hidden" name="from_name" value="<?= e($profile['name']) ?> Portfolio" />
+                <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" />
+                <label>Name <input type="text" name="name" required autocomplete="name" /></label>
+                <label>Email <input type="email" name="email" required autocomplete="email" /></label>
+                <label>Message <textarea name="message" rows="5" required></textarea></label>
+                <button type="submit" class="btn">Send message</button>
+                <p class="form-status" id="formStatus" role="status"></p>
             </form>
+            <?php endif; ?>
         </div>
     </div>
 </section>
 
-<!-- ============ STICKY CHAT COMPOSER ============ -->
-<div class="sticky-composer" id="stickyComposer" aria-label="Quick chat with Anshu Raj's personal AI agent">
-    <div class="sc-inner">
-        <div class="sc-avatar has-photo">
-            <img src="assets/images/profile.jpg" alt="<?= htmlspecialchars($profile['name']) ?>"
-                 onerror="this.onerror=null;this.src='assets/images/Logo.png';this.classList.add('logo-fallback');" />
-            <span class="avatar-status"></span>
-        </div>
-        <form class="sc-form" onsubmit="event.preventDefault(); window.handleStickyAsk();">
-            <input type="text" id="stickyInput" placeholder="Ask Anshu Raj's personal AI agent — projects, skills, hire..." aria-label="Quick chat" />
-            <div class="sc-quick">
-                <button type="button" class="sc-chip" data-target="#projects">💼</button>
-                <button type="button" class="sc-chip" data-target="#skills">⚡</button>
-                <button type="button" class="sc-chip" data-target="#contact">📞</button>
-            </div>
-            <button type="submit" class="sc-send" aria-label="Send">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-            </button>
-        </form>
-    </div>
-</div>
+</main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="footer">
     <div class="container footer-inner">
-        <div class="footer-brand">
-            <img src="assets/images/Logo.png" alt="Anshu Raj" class="logo-img big" />
-            <p>Building systems, one query at a time.</p>
-        </div>
-        <div class="footer-cols">
-            <div>
-                <h4>Navigate</h4>
-                <a href="#home">Home</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div>
-                <h4>Connect</h4>
-                <a href="<?= htmlspecialchars($profile['github']) ?>" target="_blank">GitHub</a>
-                <a href="mailto:<?= htmlspecialchars($profile['email']) ?>">Email</a>
-                <a href="<?= htmlspecialchars($profile['resume']) ?>" target="_blank">Resume</a>
-            </div>
-            <div>
-                <h4>Elsewhere</h4>
-                <a href="<?= htmlspecialchars($profile['linkedin']) ?>">LinkedIn</a>
-                <a href="tel:<?= htmlspecialchars($profile['phone']) ?>">Phone</a>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom container">
-        <span>© <?= date('Y') ?> <?= htmlspecialchars($profile['name']) ?>. Crafted with <span class="heart">♥</span> and a lot of coffee.</span>
-        <span class="footer-status"><span class="dot-blink"></span> Online</span>
+        <span>© <?= date('Y') ?> <?= e($profile['name']) ?></span>
+        <span>
+            <a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="mailto:<?= e($profile['email']) ?>">Email</a>
+        </span>
     </div>
 </footer>
 
