@@ -149,7 +149,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 
 <header class="nav">
     <div class="container nav-inner">
-        <a href="#top" class="nav-brand"><img src="<?= $v('assets/icons/nav-logo.png') ?>" alt="" width="36" height="36" class="nav-logo" /><span><?= e($profile['name']) ?></span></a>
+        <a href="#top" class="nav-brand" aria-label="<?= e($profile['name']) ?> — portfolio home"><img src="<?= $v('assets/icons/nav-logo.png') ?>" alt="" width="36" height="36" class="nav-logo" /><span>Portfolio</span></a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
             <span></span><span></span>
         </button>
