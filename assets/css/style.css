@@ -77,7 +77,9 @@ strong { font-weight: 600; }
     border-bottom: 1px solid var(--border);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.nav-brand { font-weight: 600; color: var(--text); }
+.nav-brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); }
+.nav-logo { width: 36px; height: 36px; border-radius: 50%; box-shadow: 0 2px 8px -2px rgba(15, 118, 110, .35); transition: transform .5s var(--ease); }
+.nav-brand:hover .nav-logo { transform: rotate(-12deg) scale(1.06); }
 .nav-brand:hover { color: var(--text); text-decoration: none; }
 .nav-links { display: flex; align-items: center; gap: 24px; }
 .nav-links a:not(.btn) { color: var(--muted); font-size: 15px; }
