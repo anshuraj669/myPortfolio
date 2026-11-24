@@ -301,6 +301,28 @@ strong { font-weight: 600; }
 .photo-wrap picture { position: relative; display: block; }
 .photo-wrap .hero-photo { position: relative; display: block; border: 3px solid var(--bg); }
 
+/* ---------- Cover banner (dark photo band before Contact) ---------- */
+.cover-band {
+    --cover: url("../images/cover.jpg");
+    position: relative; display: flex; align-items: center; min-height: 380px;
+    background:
+        linear-gradient(90deg, rgba(12, 14, 18, .92) 0%, rgba(12, 14, 18, .55) 45%, rgba(12, 14, 18, 0) 70%),
+        #0c0e12 var(--cover) right bottom / cover no-repeat;
+    color: #e2e8f0;
+}
+.cover-band-inner { padding-top: 56px; padding-bottom: 56px; }
+.cover-band h2 { color: #fff; font-size: clamp(1.7rem, 3.4vw, 2.3rem); line-height: 1.2; letter-spacing: -0.02em; max-width: 520px; margin: 0 0 22px; }
+.cover-eyebrow { font-family: var(--mono); font-size: 14px; color: #5eead4; margin: 0 0 10px; }
+@media (max-width: 760px) {
+    .cover-band {
+        --cover: url("../images/cover-small.jpg");
+        align-items: flex-start; min-height: 420px;
+        background:
+            linear-gradient(180deg, rgba(12, 14, 18, .96) 0%, rgba(12, 14, 18, .85) 48%, rgba(12, 14, 18, 0) 78%),
+            #0c0e12 var(--cover) 82% bottom / auto 250px no-repeat;
+    }
+}
+
 /* ---------- Interactions ---------- */
 .btn, .project, .tags li, .nav, .contact-form input, .contact-form textarea {
     transition: background-color .2s, border-color .2s, color .2s, box-shadow .3s var(--ease), transform .3s var(--ease);

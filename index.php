@@ -324,6 +324,15 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
 </section>
 
 <!-- ============ CONTACT ============ -->
+<!-- Cover banner: call to action before Contact -->
+<aside class="cover-band" aria-label="Get in touch">
+    <div class="container cover-band-inner reveal">
+        <p class="cover-eyebrow">// currently open to full-stack roles</p>
+        <h2>Looking for a full-stack developer? Let&rsquo;s talk.</h2>
+        <a href="#contact" class="btn">Get in touch</a>
+    </div>
+</aside>
+
 <section id="contact" class="section">
     <div class="container narrow">
         <h2 class="section-title reveal">Contact</h2>
