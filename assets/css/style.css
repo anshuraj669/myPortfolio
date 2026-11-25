@@ -164,6 +164,11 @@ strong { font-weight: 600; }
 .project h3 a:hover { color: var(--accent); text-decoration: none; }
 .project-sub { margin: 2px 0 0; font-size: 14px; color: var(--accent) !important; }
 .project-desc { font-size: 15px; flex: 1; }
+.project-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin: 16px 0 0; padding-top: 14px; border-top: 1px solid var(--border); }
+.project-demo { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--on-accent); background: var(--accent); transition: background .2s, transform .2s, box-shadow .2s; }
+.project-demo:hover { background: var(--accent-hover); color: var(--on-accent); text-decoration: none; transform: translateY(-1px); box-shadow: 0 8px 18px -8px rgba(15, 118, 110, .55); }
+.project-code { display: inline-flex; align-items: center; gap: 5px; font-size: 14px; font-weight: 500; color: var(--muted); }
+.project-code:hover { color: var(--accent); text-decoration: none; }
 .more { margin-top: 24px; }
 .more a { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
 @media (max-width: 760px) { .projects { grid-template-columns: 1fr; } }

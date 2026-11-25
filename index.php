@@ -9,7 +9,7 @@ $profile = [
     'phone'        => '+91 8292253230',
     'github'       => 'https://github.com/anshuraj669',
     'github_user'  => 'anshuraj669',
-    'linkedin'     => 'https://www.linkedin.com/in/anshu~raj/',
+    'linkedin'     => 'https://www.linkedin.com/in/anshuraj1306/',
     'resume'       => 'Resume.pdf',
     'company'      => 'Incoweb Technologies',
     // Free contact-form key from https://web3forms.com — enter your email there, paste the emailed key here.
@@ -51,6 +51,7 @@ $projects = [
         'desc'  => 'A private, self-hosted assistant that runs on a NAS or any Docker host. It indexes every repository for semantic code search and Q&A with file:line citations, and can copy a feature from an old project into a new one — adapting names, imports and dependencies and showing the diff first. Its Log Detective groups production errors, maps stack traces to the failing line, finds the commit that introduced it with git blame and suggests a fix. Secrets and personal data are redacted before storage; team mode adds per-repo access tokens and an audit log. Exposed to Claude Code and other agents over MCP.',
         'tags'  => ['Python', 'FastAPI', 'tree-sitter', 'Ollama', 'MCP', 'React', 'Docker'],
         'link'  => 'https://github.com/anshuraj669/tracebase',
+        'demo'  => 'https://youtu.be/ndE0fNoPFOY',
     ],
     [
         'title' => 'Sentinel',
@@ -58,6 +59,7 @@ $projects = [
         'desc'  => 'A Laravel + Livewire application backed by a stateless Python scanning engine over REST. Automated checks cover TLS, security headers, exposed files, cookies, CORS, malware and information leakage, with isolated checks and careful handling of sensitive evidence. A companion CLI adds source-code analysis, dependency scanning, secret detection and Git-history audits that sync back to the dashboard.',
         'tags'  => ['Laravel', 'Livewire', 'FastAPI', 'Python', 'MySQL'],
         'link'  => 'https://github.com/anshuraj669/sentinel',
+        'demo'  => 'https://youtu.be/gpLkKcIjLkM',
     ],
     [
         'title' => 'Notification Engine',
@@ -65,6 +67,7 @@ $projects = [
         'desc'  => 'Routes financial events (order.executed, margin.call, …) by priority across SMS, email, push, WhatsApp and in-app, in the user’s language. A compliance chain enforces Indian telecom rules (DLT, DND, quiet hours, consent, frequency caps). Provider failover, circuit breakers, retries and a dead-letter queue sit behind every send, and every outcome is written to a delivery ledger that feeds an operator dashboard and Prometheus alerts.',
         'tags'  => ['FastAPI', 'Kafka', 'PostgreSQL', 'Redis', 'Prometheus', 'Docker'],
         'link'  => 'https://github.com/anshuraj669/NotificationEngine',
+        'demo'  => 'https://youtu.be/R-Hgx4pE7i0',
     ],
     [
         'title' => 'Klonr',
@@ -72,6 +75,7 @@ $projects = [
         'desc'  => 'Clone a voice from a short audio sample and generate speech with the Spark-TTS model, with real-time streaming playback and batch synthesis from CSV. FastAPI backend with SQLAlchemy, JWT and Google OAuth 2.0, and a documented REST API; React 19 dashboard with usage stats. Dockerised with GPU support.',
         'tags'  => ['FastAPI', 'PyTorch', 'React', 'OAuth 2.0', 'Docker'],
         'link'  => 'https://github.com/anshuraj669/klonr',
+        'demo'  => 'https://youtu.be/Dc70l84H2UE',
     ],
 ];
 
@@ -109,6 +113,7 @@ $siteUrl = 'https://anshuraj669.github.io/myPortfolio/';
 $v = fn(string $f) => $f . '?v=' . filemtime(__DIR__ . '/' . $f);
 
 $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+$play  = '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -253,6 +258,12 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
                     <li><?= e($t) ?></li>
                     <?php endforeach; ?>
                 </ul>
+                <?php if (!empty($p['demo'])): ?>
+                <p class="project-actions">
+                    <a href="<?= e($p['demo']) ?>" class="project-demo" target="_blank" rel="noopener" aria-label="Watch the <?= e($p['title']) ?> demo video on YouTube"><?= $play ?>Watch demo</a>
+                    <a href="<?= e($p['link']) ?>" class="project-code" target="_blank" rel="noopener" aria-label="<?= e($p['title']) ?> source code on GitHub">Source code <?= $arrow ?></a>
+                </p>
+                <?php endif; ?>
             </article>
             <?php endforeach; ?>
         </div>
@@ -342,7 +353,7 @@ $arrow = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="cu
                 <li><span>Email</span><a href="mailto:<?= e($profile['email']) ?>"><?= e($profile['email']) ?></a></li>
                 <li><span>Phone</span><a href="tel:<?= e(str_replace(' ', '', $profile['phone'])) ?>"><?= e($profile['phone']) ?></a></li>
                 <li><span>GitHub</span><a href="<?= e($profile['github']) ?>" target="_blank" rel="noopener">@<?= e($profile['github_user']) ?></a></li>
-                <li><span>LinkedIn</span><a href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener">anshu~raj</a></li>
+                <li><span>LinkedIn</span><a href="<?= e($profile['linkedin']) ?>" target="_blank" rel="noopener">anshuraj1306</a></li>
                 <li><span>Location</span><?= e($profile['location']) ?></li>
             </ul>
             <?php if ($formEnabled): ?>
